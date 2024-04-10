@@ -1,0 +1,65 @@
+context Policy {
+	
+	constraint NoEmptyFailureMessage {
+		
+		check : self.FailureMessage != ""
+		
+		message : "Was expecting valid messages but found empty message instead"
+		
+		fix {
+		
+			title : "Add Failure message"
+			
+			do {
+				self.FailureMessage = "Place holder for failure message";
+			}
+			
+		}
+		
+	}
+	
+	constraint NoEmptySuccessMessage {
+		
+		check : self.SuccessMessage != ""
+		
+		message : "Was expecting valid messages but found empty message instead"
+		
+		fix {
+		
+			title : "Add Failure message"
+			
+			do {
+				self.SuccessMessage = "Place holder for failure message";
+			}
+			
+		}
+		
+	}
+	
+
+}
+
+context InputFile {
+
+	constraint ValidJson {
+		
+		check {
+			return new Native( "org.xtext.example.openDictatorDsl.validation.JsonHelper" ).isValidJson( self.fileLocation );
+		} 
+		
+		
+		message : "Was expecting valid JSON but JSON is not parsable"
+		
+		fix {
+		
+			title : "Validate json before running check"
+			
+			do {
+				self.fileLocation = self.fileLocation;
+			}
+			
+		}
+		
+	}
+
+}
