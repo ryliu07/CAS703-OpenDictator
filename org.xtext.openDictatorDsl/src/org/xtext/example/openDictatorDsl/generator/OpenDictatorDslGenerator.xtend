@@ -7,6 +7,9 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
+import openDictator.Policy
+import openDictator.Statement
+import openDictator.StatementSet
 
 /**
  * Generates code from your model files on save.
@@ -16,10 +19,103 @@ import org.eclipse.xtext.generator.IGeneratorContext
 class OpenDictatorDslGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		var content = "{\n"
+		var policy = resource.contents.get(0) as Policy
+		content += statementSetToJson(policy.statementset)
+		content = content.substring(0, content.length() - 2) + "\n}"
+		System.out.println("DEBUG"+content)
+		fsa.generateFile("template.json",content)
 	}
+	
+	def String statementSetToJson(StatementSet statementSet){
+		var jsonString = ""
+		
+		switch statementSet.statementOperator{
+			case OR: {
+				jsonString += statementToJson(statementSet.statement.get(0))
+			}
+			
+			case AND: {
+				for(statement: statementSet.statement){
+					jsonString += statementToJson(statement)
+				}
+				for(nestedStatementSet: statementSet.statementset){
+					jsonString += statementSetToJson(nestedStatementSet)
+				}
+			}
+			
+			case NOT: {
+			}
+			
+		}
+		return jsonString
+	}
+	
+	def String statementToJson(Statement statement){
+		var jsonString = ""
+		switch statement.value.type {
+			case "string":{
+				switch statement.evaluationOperator {
+					case EQUALS:{
+						jsonString = '"' + statement.jsonquery.queryString + '"' + ":" + '"' + statement.value.value + '"'  + ",\n"
+					}
+					default: {
+						return "Invalid operation on " + statement.jsonquery.queryString + "\n"
+					}
+					
+				}
+			}
+			
+			case "number":{
+				switch statement.evaluationOperator {
+					case EQUALS:{
+						jsonString = '"' + statement.jsonquery.queryString + '"' + ":" + statement.value.value  + ",\n"
+					}
+					case LARGERTHAN: {
+						jsonString = '"' + statement.jsonquery.queryString + '"' + ":" + Integer.toString(Integer.parseInt(statement.value.value) + 1) + ",\n"
+					}
+					case SMALLERTHAN: {
+						jsonString = '"' + statement.jsonquery.queryString + '"' + ":" + Integer.toString(Integer.parseInt(statement.value.value) - 1) + ",\n"
+					}
+					default: {
+						return "Invalid operation on " + statement.jsonquery.queryString + "\n"
+					}
+					
+				}
+			}
+			
+			case "array":{
+				switch statement.evaluationOperator {
+					case CONTAINS: {
+						jsonString = '"' + statement.jsonquery.queryString + '"' + ":" + statement.value.value  + ",\n"
+					}
+					default: {
+						return "Invalid operation on " + statement.jsonquery.queryString + "\n"
+					}
+					
+				}
+			}
+			
+			case "object":{
+				switch statement.evaluationOperator {
+					case EQUALS:{
+						jsonString = '"' + statement.jsonquery.queryString + '"' + ":" + statement.value.value  + ",\n"
+					}
+					default: {
+						return "Invalid operation on " + statement.jsonquery.queryString + "\n"
+					}
+					
+				}
+			}
+			
+			default: {
+				return "Invalid Value Type" + ", Supported Types are number, array, string and object\n"
+			}
+			
+		}
+		
+		
+		return jsonString
+	}
+
 }

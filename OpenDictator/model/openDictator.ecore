@@ -39,6 +39,7 @@
     <eLiterals name="NOT" value="9"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StatementSet">
+    <eOperations name="evaluate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="statementOperator" lowerBound="1"
         eType="#//StatementOperator"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statementset" upperBound="-1"

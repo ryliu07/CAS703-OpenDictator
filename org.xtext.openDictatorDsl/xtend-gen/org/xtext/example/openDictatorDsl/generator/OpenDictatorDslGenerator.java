@@ -3,6 +3,13 @@
  */
 package org.xtext.example.openDictatorDsl.generator;
 
+import openDictator.EvaluationOperator;
+import openDictator.Policy;
+import openDictator.Statement;
+import openDictator.StatementOperator;
+import openDictator.StatementSet;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
@@ -17,5 +24,191 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class OpenDictatorDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    String content = "{\n";
+    EObject _get = resource.getContents().get(0);
+    Policy policy = ((Policy) _get);
+    String _content = content;
+    String _statementSetToJson = this.statementSetToJson(policy.getStatementset());
+    content = (_content + _statementSetToJson);
+    int _length = content.length();
+    int _minus = (_length - 2);
+    String _substring = content.substring(0, _minus);
+    String _plus = (_substring + "\n}");
+    content = _plus;
+    System.out.println(("DEBUG" + content));
+    fsa.generateFile("template.json", content);
+  }
+
+  public String statementSetToJson(final StatementSet statementSet) {
+    String jsonString = "";
+    StatementOperator _statementOperator = statementSet.getStatementOperator();
+    if (_statementOperator != null) {
+      switch (_statementOperator) {
+        case OR:
+          String _jsonString = jsonString;
+          String _statementToJson = this.statementToJson(statementSet.getStatement().get(0));
+          jsonString = (_jsonString + _statementToJson);
+          break;
+        case AND:
+          EList<Statement> _statement = statementSet.getStatement();
+          for (final Statement statement : _statement) {
+            String _jsonString_1 = jsonString;
+            String _statementToJson_1 = this.statementToJson(statement);
+            jsonString = (_jsonString_1 + _statementToJson_1);
+          }
+          EList<StatementSet> _statementset = statementSet.getStatementset();
+          for (final StatementSet nestedStatementSet : _statementset) {
+            String _jsonString_2 = jsonString;
+            String _statementSetToJson = this.statementSetToJson(nestedStatementSet);
+            jsonString = (_jsonString_2 + _statementSetToJson);
+          }
+          break;
+        case NOT:
+          break;
+        default:
+          break;
+      }
+    }
+    return jsonString;
+  }
+
+  public String statementToJson(final Statement statement) {
+    String jsonString = "";
+    String _type = statement.getValue().getType();
+    if (_type != null) {
+      switch (_type) {
+        case "string":
+          EvaluationOperator _evaluationOperator = statement.getEvaluationOperator();
+          if (_evaluationOperator != null) {
+            switch (_evaluationOperator) {
+              case EQUALS:
+                String _queryString = statement.getJsonquery().getQueryString();
+                String _plus = ("\"" + _queryString);
+                String _plus_1 = (_plus + "\"");
+                String _plus_2 = (_plus_1 + ":");
+                String _plus_3 = (_plus_2 + "\"");
+                String _value = statement.getValue().getValue();
+                String _plus_4 = (_plus_3 + _value);
+                String _plus_5 = (_plus_4 + "\"");
+                String _plus_6 = (_plus_5 + ",\n");
+                jsonString = _plus_6;
+                break;
+              default:
+                String _queryString_1 = statement.getJsonquery().getQueryString();
+                String _plus_7 = ("Invalid operation on " + _queryString_1);
+                return (_plus_7 + "\n");
+            }
+          } else {
+            String _queryString_1 = statement.getJsonquery().getQueryString();
+            String _plus_7 = ("Invalid operation on " + _queryString_1);
+            return (_plus_7 + "\n");
+          }
+          break;
+        case "number":
+          EvaluationOperator _evaluationOperator_1 = statement.getEvaluationOperator();
+          if (_evaluationOperator_1 != null) {
+            switch (_evaluationOperator_1) {
+              case EQUALS:
+                String _queryString_2 = statement.getJsonquery().getQueryString();
+                String _plus_8 = ("\"" + _queryString_2);
+                String _plus_9 = (_plus_8 + "\"");
+                String _plus_10 = (_plus_9 + ":");
+                String _value_1 = statement.getValue().getValue();
+                String _plus_11 = (_plus_10 + _value_1);
+                String _plus_12 = (_plus_11 + ",\n");
+                jsonString = _plus_12;
+                break;
+              case LARGERTHAN:
+                String _queryString_3 = statement.getJsonquery().getQueryString();
+                String _plus_13 = ("\"" + _queryString_3);
+                String _plus_14 = (_plus_13 + "\"");
+                String _plus_15 = (_plus_14 + ":");
+                int _parseInt = Integer.parseInt(statement.getValue().getValue());
+                int _plus_16 = (_parseInt + 1);
+                String _string = Integer.toString(_plus_16);
+                String _plus_17 = (_plus_15 + _string);
+                String _plus_18 = (_plus_17 + ",\n");
+                jsonString = _plus_18;
+                break;
+              case SMALLERTHAN:
+                String _queryString_4 = statement.getJsonquery().getQueryString();
+                String _plus_19 = ("\"" + _queryString_4);
+                String _plus_20 = (_plus_19 + "\"");
+                String _plus_21 = (_plus_20 + ":");
+                int _parseInt_1 = Integer.parseInt(statement.getValue().getValue());
+                int _minus = (_parseInt_1 - 1);
+                String _string_1 = Integer.toString(_minus);
+                String _plus_22 = (_plus_21 + _string_1);
+                String _plus_23 = (_plus_22 + ",\n");
+                jsonString = _plus_23;
+                break;
+              default:
+                String _queryString_5 = statement.getJsonquery().getQueryString();
+                String _plus_24 = ("Invalid operation on " + _queryString_5);
+                return (_plus_24 + "\n");
+            }
+          } else {
+            String _queryString_5 = statement.getJsonquery().getQueryString();
+            String _plus_24 = ("Invalid operation on " + _queryString_5);
+            return (_plus_24 + "\n");
+          }
+          break;
+        case "array":
+          EvaluationOperator _evaluationOperator_2 = statement.getEvaluationOperator();
+          if (_evaluationOperator_2 != null) {
+            switch (_evaluationOperator_2) {
+              case CONTAINS:
+                String _queryString_6 = statement.getJsonquery().getQueryString();
+                String _plus_25 = ("\"" + _queryString_6);
+                String _plus_26 = (_plus_25 + "\"");
+                String _plus_27 = (_plus_26 + ":");
+                String _value_2 = statement.getValue().getValue();
+                String _plus_28 = (_plus_27 + _value_2);
+                String _plus_29 = (_plus_28 + ",\n");
+                jsonString = _plus_29;
+                break;
+              default:
+                String _queryString_7 = statement.getJsonquery().getQueryString();
+                String _plus_30 = ("Invalid operation on " + _queryString_7);
+                return (_plus_30 + "\n");
+            }
+          } else {
+            String _queryString_7 = statement.getJsonquery().getQueryString();
+            String _plus_30 = ("Invalid operation on " + _queryString_7);
+            return (_plus_30 + "\n");
+          }
+          break;
+        case "object":
+          EvaluationOperator _evaluationOperator_3 = statement.getEvaluationOperator();
+          if (_evaluationOperator_3 != null) {
+            switch (_evaluationOperator_3) {
+              case EQUALS:
+                String _queryString_8 = statement.getJsonquery().getQueryString();
+                String _plus_31 = ("\"" + _queryString_8);
+                String _plus_32 = (_plus_31 + "\"");
+                String _plus_33 = (_plus_32 + ":");
+                String _value_3 = statement.getValue().getValue();
+                String _plus_34 = (_plus_33 + _value_3);
+                String _plus_35 = (_plus_34 + ",\n");
+                jsonString = _plus_35;
+                break;
+              default:
+                String _queryString_9 = statement.getJsonquery().getQueryString();
+                String _plus_36 = ("Invalid operation on " + _queryString_9);
+                return (_plus_36 + "\n");
+            }
+          } else {
+            String _queryString_9 = statement.getJsonquery().getQueryString();
+            String _plus_36 = ("Invalid operation on " + _queryString_9);
+            return (_plus_36 + "\n");
+          }
+          break;
+        default:
+          return ("Invalid Value Type" + ", Supported Types are number, array, string and object\n");
+      }
+    } else {
+      return ("Invalid Value Type" + ", Supported Types are number, array, string and object\n");
+    }
+    return jsonString;
   }
 }

@@ -22,30 +22,22 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Policy'", "'{'", "'FailureMessage'", "'SuccessMessage'", "'id'", "'statementset'", "'inputfile'", "'}'", "'StatementSet'", "'statementOperator'", "','", "'statement'", "'InputFile'", "'fileLocation'", "'Statement'", "'evaluationOperator'", "'prefixEvaluationOperator'", "'jsonquery'", "'value'", "'JsonQuery'", "'queryString'", "'Value'", "'type'", "'AND'", "'OR'", "'NOT'", "'FORSOME'", "'FORALL'", "'CONTAINS'", "'EQUALS'", "'LARGERTHAN'", "'SMALLERTHAN'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_STRING", "RULE_ID", "RULE_INT", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'Id'", "'FailureMessage'", "'SuccessMessage'", "'FileLocation'", "'Policy'", "'{'", "'}'", "'['", "','", "']'", "'type='", "'value='", "'AND'", "'OR'", "'NOT'", "'FORSOME'", "'FORALL'", "'CONTAINS'", "'EQUALS'", "'LARGERTHAN'", "'SMALLERTHAN'"
     };
     public static final int RULE_STRING=4;
     public static final int RULE_SL_COMMENT=8;
     public static final int T__19=19;
     public static final int T__15=15;
-    public static final int T__37=37;
     public static final int T__16=16;
-    public static final int T__38=38;
     public static final int T__17=17;
-    public static final int T__39=39;
     public static final int T__18=18;
     public static final int T__11=11;
-    public static final int T__33=33;
     public static final int T__12=12;
-    public static final int T__34=34;
     public static final int T__13=13;
-    public static final int T__35=35;
     public static final int T__14=14;
-    public static final int T__36=36;
     public static final int EOF=-1;
     public static final int T__30=30;
     public static final int T__31=31;
-    public static final int T__32=32;
     public static final int RULE_ID=5;
     public static final int RULE_WS=9;
     public static final int RULE_ANY_OTHER=10;
@@ -59,10 +51,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
     public static final int T__23=23;
     public static final int T__24=24;
     public static final int T__25=25;
-    public static final int T__40=40;
-    public static final int T__41=41;
     public static final int T__20=20;
-    public static final int T__42=42;
     public static final int T__21=21;
 
     // delegates
@@ -141,61 +130,87 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "rulePolicy"
-    // InternalOpenDictatorDsl.g:72:1: rulePolicy returns [EObject current=null] : (otherlv_0= 'Policy' otherlv_1= '{' otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'id' ( (lv_id_7_0= ruleEString ) ) otherlv_8= 'statementset' ( (lv_statementset_9_0= ruleStatementSet ) ) otherlv_10= 'inputfile' ( (lv_inputfile_11_0= ruleInputFile ) ) otherlv_12= '}' ) ;
+    // InternalOpenDictatorDsl.g:72:1: rulePolicy returns [EObject current=null] : (otherlv_0= 'Id' ( (lv_id_1_0= ruleEString ) ) otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'FileLocation' ( (lv_inputfile_7_0= ruleInputFile ) ) otherlv_8= 'Policy' otherlv_9= '{' ( (lv_statementset_10_0= ruleStatementSet ) ) otherlv_11= '}' ) ;
     public final EObject rulePolicy() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token otherlv_2=null;
         Token otherlv_4=null;
         Token otherlv_6=null;
         Token otherlv_8=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        AntlrDatatypeRuleToken lv_id_1_0 = null;
+
         AntlrDatatypeRuleToken lv_FailureMessage_3_0 = null;
 
         AntlrDatatypeRuleToken lv_SuccessMessage_5_0 = null;
 
-        AntlrDatatypeRuleToken lv_id_7_0 = null;
+        EObject lv_inputfile_7_0 = null;
 
-        EObject lv_statementset_9_0 = null;
-
-        EObject lv_inputfile_11_0 = null;
+        EObject lv_statementset_10_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:78:2: ( (otherlv_0= 'Policy' otherlv_1= '{' otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'id' ( (lv_id_7_0= ruleEString ) ) otherlv_8= 'statementset' ( (lv_statementset_9_0= ruleStatementSet ) ) otherlv_10= 'inputfile' ( (lv_inputfile_11_0= ruleInputFile ) ) otherlv_12= '}' ) )
-            // InternalOpenDictatorDsl.g:79:2: (otherlv_0= 'Policy' otherlv_1= '{' otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'id' ( (lv_id_7_0= ruleEString ) ) otherlv_8= 'statementset' ( (lv_statementset_9_0= ruleStatementSet ) ) otherlv_10= 'inputfile' ( (lv_inputfile_11_0= ruleInputFile ) ) otherlv_12= '}' )
+            // InternalOpenDictatorDsl.g:78:2: ( (otherlv_0= 'Id' ( (lv_id_1_0= ruleEString ) ) otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'FileLocation' ( (lv_inputfile_7_0= ruleInputFile ) ) otherlv_8= 'Policy' otherlv_9= '{' ( (lv_statementset_10_0= ruleStatementSet ) ) otherlv_11= '}' ) )
+            // InternalOpenDictatorDsl.g:79:2: (otherlv_0= 'Id' ( (lv_id_1_0= ruleEString ) ) otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'FileLocation' ( (lv_inputfile_7_0= ruleInputFile ) ) otherlv_8= 'Policy' otherlv_9= '{' ( (lv_statementset_10_0= ruleStatementSet ) ) otherlv_11= '}' )
             {
-            // InternalOpenDictatorDsl.g:79:2: (otherlv_0= 'Policy' otherlv_1= '{' otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'id' ( (lv_id_7_0= ruleEString ) ) otherlv_8= 'statementset' ( (lv_statementset_9_0= ruleStatementSet ) ) otherlv_10= 'inputfile' ( (lv_inputfile_11_0= ruleInputFile ) ) otherlv_12= '}' )
-            // InternalOpenDictatorDsl.g:80:3: otherlv_0= 'Policy' otherlv_1= '{' otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'id' ( (lv_id_7_0= ruleEString ) ) otherlv_8= 'statementset' ( (lv_statementset_9_0= ruleStatementSet ) ) otherlv_10= 'inputfile' ( (lv_inputfile_11_0= ruleInputFile ) ) otherlv_12= '}'
+            // InternalOpenDictatorDsl.g:79:2: (otherlv_0= 'Id' ( (lv_id_1_0= ruleEString ) ) otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'FileLocation' ( (lv_inputfile_7_0= ruleInputFile ) ) otherlv_8= 'Policy' otherlv_9= '{' ( (lv_statementset_10_0= ruleStatementSet ) ) otherlv_11= '}' )
+            // InternalOpenDictatorDsl.g:80:3: otherlv_0= 'Id' ( (lv_id_1_0= ruleEString ) ) otherlv_2= 'FailureMessage' ( (lv_FailureMessage_3_0= ruleEString ) ) otherlv_4= 'SuccessMessage' ( (lv_SuccessMessage_5_0= ruleEString ) ) otherlv_6= 'FileLocation' ( (lv_inputfile_7_0= ruleInputFile ) ) otherlv_8= 'Policy' otherlv_9= '{' ( (lv_statementset_10_0= ruleStatementSet ) ) otherlv_11= '}'
             {
             otherlv_0=(Token)match(input,11,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getPolicyAccess().getPolicyKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getPolicyAccess().getIdKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_4); 
+            // InternalOpenDictatorDsl.g:84:3: ( (lv_id_1_0= ruleEString ) )
+            // InternalOpenDictatorDsl.g:85:4: (lv_id_1_0= ruleEString )
+            {
+            // InternalOpenDictatorDsl.g:85:4: (lv_id_1_0= ruleEString )
+            // InternalOpenDictatorDsl.g:86:5: lv_id_1_0= ruleEString
+            {
 
-            			newLeafNode(otherlv_1, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,13,FOLLOW_5); 
+            					newCompositeNode(grammarAccess.getPolicyAccess().getIdEStringParserRuleCall_1_0());
+            				
+            pushFollow(FOLLOW_4);
+            lv_id_1_0=ruleEString();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getPolicyRule());
+            					}
+            					set(
+            						current,
+            						"id",
+            						lv_id_1_0,
+            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,12,FOLLOW_3); 
 
             			newLeafNode(otherlv_2, grammarAccess.getPolicyAccess().getFailureMessageKeyword_2());
             		
-            // InternalOpenDictatorDsl.g:92:3: ( (lv_FailureMessage_3_0= ruleEString ) )
-            // InternalOpenDictatorDsl.g:93:4: (lv_FailureMessage_3_0= ruleEString )
+            // InternalOpenDictatorDsl.g:107:3: ( (lv_FailureMessage_3_0= ruleEString ) )
+            // InternalOpenDictatorDsl.g:108:4: (lv_FailureMessage_3_0= ruleEString )
             {
-            // InternalOpenDictatorDsl.g:93:4: (lv_FailureMessage_3_0= ruleEString )
-            // InternalOpenDictatorDsl.g:94:5: lv_FailureMessage_3_0= ruleEString
+            // InternalOpenDictatorDsl.g:108:4: (lv_FailureMessage_3_0= ruleEString )
+            // InternalOpenDictatorDsl.g:109:5: lv_FailureMessage_3_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getPolicyAccess().getFailureMessageEStringParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_6);
+            pushFollow(FOLLOW_5);
             lv_FailureMessage_3_0=ruleEString();
 
             state._fsp--;
@@ -217,20 +232,20 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,14,FOLLOW_5); 
+            otherlv_4=(Token)match(input,13,FOLLOW_3); 
 
             			newLeafNode(otherlv_4, grammarAccess.getPolicyAccess().getSuccessMessageKeyword_4());
             		
-            // InternalOpenDictatorDsl.g:115:3: ( (lv_SuccessMessage_5_0= ruleEString ) )
-            // InternalOpenDictatorDsl.g:116:4: (lv_SuccessMessage_5_0= ruleEString )
+            // InternalOpenDictatorDsl.g:130:3: ( (lv_SuccessMessage_5_0= ruleEString ) )
+            // InternalOpenDictatorDsl.g:131:4: (lv_SuccessMessage_5_0= ruleEString )
             {
-            // InternalOpenDictatorDsl.g:116:4: (lv_SuccessMessage_5_0= ruleEString )
-            // InternalOpenDictatorDsl.g:117:5: lv_SuccessMessage_5_0= ruleEString
+            // InternalOpenDictatorDsl.g:131:4: (lv_SuccessMessage_5_0= ruleEString )
+            // InternalOpenDictatorDsl.g:132:5: lv_SuccessMessage_5_0= ruleEString
             {
 
             					newCompositeNode(grammarAccess.getPolicyAccess().getSuccessMessageEStringParserRuleCall_5_0());
             				
-            pushFollow(FOLLOW_7);
+            pushFollow(FOLLOW_6);
             lv_SuccessMessage_5_0=ruleEString();
 
             state._fsp--;
@@ -252,91 +267,21 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,15,FOLLOW_5); 
+            otherlv_6=(Token)match(input,14,FOLLOW_3); 
 
-            			newLeafNode(otherlv_6, grammarAccess.getPolicyAccess().getIdKeyword_6());
+            			newLeafNode(otherlv_6, grammarAccess.getPolicyAccess().getFileLocationKeyword_6());
             		
-            // InternalOpenDictatorDsl.g:138:3: ( (lv_id_7_0= ruleEString ) )
-            // InternalOpenDictatorDsl.g:139:4: (lv_id_7_0= ruleEString )
+            // InternalOpenDictatorDsl.g:153:3: ( (lv_inputfile_7_0= ruleInputFile ) )
+            // InternalOpenDictatorDsl.g:154:4: (lv_inputfile_7_0= ruleInputFile )
             {
-            // InternalOpenDictatorDsl.g:139:4: (lv_id_7_0= ruleEString )
-            // InternalOpenDictatorDsl.g:140:5: lv_id_7_0= ruleEString
+            // InternalOpenDictatorDsl.g:154:4: (lv_inputfile_7_0= ruleInputFile )
+            // InternalOpenDictatorDsl.g:155:5: lv_inputfile_7_0= ruleInputFile
             {
 
-            					newCompositeNode(grammarAccess.getPolicyAccess().getIdEStringParserRuleCall_7_0());
+            					newCompositeNode(grammarAccess.getPolicyAccess().getInputfileInputFileParserRuleCall_7_0());
             				
-            pushFollow(FOLLOW_8);
-            lv_id_7_0=ruleEString();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getPolicyRule());
-            					}
-            					set(
-            						current,
-            						"id",
-            						lv_id_7_0,
-            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_8=(Token)match(input,16,FOLLOW_9); 
-
-            			newLeafNode(otherlv_8, grammarAccess.getPolicyAccess().getStatementsetKeyword_8());
-            		
-            // InternalOpenDictatorDsl.g:161:3: ( (lv_statementset_9_0= ruleStatementSet ) )
-            // InternalOpenDictatorDsl.g:162:4: (lv_statementset_9_0= ruleStatementSet )
-            {
-            // InternalOpenDictatorDsl.g:162:4: (lv_statementset_9_0= ruleStatementSet )
-            // InternalOpenDictatorDsl.g:163:5: lv_statementset_9_0= ruleStatementSet
-            {
-
-            					newCompositeNode(grammarAccess.getPolicyAccess().getStatementsetStatementSetParserRuleCall_9_0());
-            				
-            pushFollow(FOLLOW_10);
-            lv_statementset_9_0=ruleStatementSet();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getPolicyRule());
-            					}
-            					set(
-            						current,
-            						"statementset",
-            						lv_statementset_9_0,
-            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.StatementSet");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            otherlv_10=(Token)match(input,17,FOLLOW_11); 
-
-            			newLeafNode(otherlv_10, grammarAccess.getPolicyAccess().getInputfileKeyword_10());
-            		
-            // InternalOpenDictatorDsl.g:184:3: ( (lv_inputfile_11_0= ruleInputFile ) )
-            // InternalOpenDictatorDsl.g:185:4: (lv_inputfile_11_0= ruleInputFile )
-            {
-            // InternalOpenDictatorDsl.g:185:4: (lv_inputfile_11_0= ruleInputFile )
-            // InternalOpenDictatorDsl.g:186:5: lv_inputfile_11_0= ruleInputFile
-            {
-
-            					newCompositeNode(grammarAccess.getPolicyAccess().getInputfileInputFileParserRuleCall_11_0());
-            				
-            pushFollow(FOLLOW_12);
-            lv_inputfile_11_0=ruleInputFile();
+            pushFollow(FOLLOW_7);
+            lv_inputfile_7_0=ruleInputFile();
 
             state._fsp--;
 
@@ -347,7 +292,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"inputfile",
-            						lv_inputfile_11_0,
+            						lv_inputfile_7_0,
             						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.InputFile");
             					afterParserOrEnumRuleCall();
             				
@@ -357,9 +302,48 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,18,FOLLOW_2); 
+            otherlv_8=(Token)match(input,15,FOLLOW_8); 
 
-            			newLeafNode(otherlv_12, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_12());
+            			newLeafNode(otherlv_8, grammarAccess.getPolicyAccess().getPolicyKeyword_8());
+            		
+            otherlv_9=(Token)match(input,16,FOLLOW_9); 
+
+            			newLeafNode(otherlv_9, grammarAccess.getPolicyAccess().getLeftCurlyBracketKeyword_9());
+            		
+            // InternalOpenDictatorDsl.g:180:3: ( (lv_statementset_10_0= ruleStatementSet ) )
+            // InternalOpenDictatorDsl.g:181:4: (lv_statementset_10_0= ruleStatementSet )
+            {
+            // InternalOpenDictatorDsl.g:181:4: (lv_statementset_10_0= ruleStatementSet )
+            // InternalOpenDictatorDsl.g:182:5: lv_statementset_10_0= ruleStatementSet
+            {
+
+            					newCompositeNode(grammarAccess.getPolicyAccess().getStatementsetStatementSetParserRuleCall_10_0());
+            				
+            pushFollow(FOLLOW_10);
+            lv_statementset_10_0=ruleStatementSet();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getPolicyRule());
+            					}
+            					set(
+            						current,
+            						"statementset",
+            						lv_statementset_10_0,
+            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.StatementSet");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            otherlv_11=(Token)match(input,17,FOLLOW_2); 
+
+            			newLeafNode(otherlv_11, grammarAccess.getPolicyAccess().getRightCurlyBracketKeyword_11());
             		
 
             }
@@ -384,7 +368,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleStatementSet"
-    // InternalOpenDictatorDsl.g:211:1: entryRuleStatementSet returns [EObject current=null] : iv_ruleStatementSet= ruleStatementSet EOF ;
+    // InternalOpenDictatorDsl.g:207:1: entryRuleStatementSet returns [EObject current=null] : iv_ruleStatementSet= ruleStatementSet EOF ;
     public final EObject entryRuleStatementSet() throws RecognitionException {
         EObject current = null;
 
@@ -392,8 +376,8 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOpenDictatorDsl.g:211:53: (iv_ruleStatementSet= ruleStatementSet EOF )
-            // InternalOpenDictatorDsl.g:212:2: iv_ruleStatementSet= ruleStatementSet EOF
+            // InternalOpenDictatorDsl.g:207:53: (iv_ruleStatementSet= ruleStatementSet EOF )
+            // InternalOpenDictatorDsl.g:208:2: iv_ruleStatementSet= ruleStatementSet EOF
             {
              newCompositeNode(grammarAccess.getStatementSetRule()); 
             pushFollow(FOLLOW_1);
@@ -420,66 +404,53 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatementSet"
-    // InternalOpenDictatorDsl.g:218:1: ruleStatementSet returns [EObject current=null] : (otherlv_0= 'StatementSet' otherlv_1= '{' otherlv_2= 'statementOperator' ( (lv_statementOperator_3_0= ruleStatementOperator ) ) (otherlv_4= 'statementset' otherlv_5= '{' ( (lv_statementset_6_0= ruleStatementSet ) ) (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )* otherlv_9= '}' )? otherlv_10= 'statement' otherlv_11= '{' ( (lv_statement_12_0= ruleStatement ) ) (otherlv_13= ',' ( (lv_statement_14_0= ruleStatement ) ) )* otherlv_15= '}' otherlv_16= '}' ) ;
+    // InternalOpenDictatorDsl.g:214:1: ruleStatementSet returns [EObject current=null] : ( ( (lv_statementOperator_0_0= ruleStatementOperator ) ) otherlv_1= '[' ( ( (lv_statementset_2_0= ruleStatementSet ) ) (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )* otherlv_5= ',' )? ( (lv_statement_6_0= ruleStatement ) ) (otherlv_7= ',' ( (lv_statement_8_0= ruleStatement ) ) )* (otherlv_9= ',' ( (lv_statementset_10_0= ruleStatementSet ) ) (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )* )? otherlv_13= ']' ) ;
     public final EObject ruleStatementSet() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
         Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
+        Token otherlv_3=null;
         Token otherlv_5=null;
         Token otherlv_7=null;
         Token otherlv_9=null;
-        Token otherlv_10=null;
         Token otherlv_11=null;
         Token otherlv_13=null;
-        Token otherlv_15=null;
-        Token otherlv_16=null;
-        Enumerator lv_statementOperator_3_0 = null;
+        Enumerator lv_statementOperator_0_0 = null;
 
-        EObject lv_statementset_6_0 = null;
+        EObject lv_statementset_2_0 = null;
 
-        EObject lv_statementset_8_0 = null;
+        EObject lv_statementset_4_0 = null;
 
-        EObject lv_statement_12_0 = null;
+        EObject lv_statement_6_0 = null;
 
-        EObject lv_statement_14_0 = null;
+        EObject lv_statement_8_0 = null;
+
+        EObject lv_statementset_10_0 = null;
+
+        EObject lv_statementset_12_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:224:2: ( (otherlv_0= 'StatementSet' otherlv_1= '{' otherlv_2= 'statementOperator' ( (lv_statementOperator_3_0= ruleStatementOperator ) ) (otherlv_4= 'statementset' otherlv_5= '{' ( (lv_statementset_6_0= ruleStatementSet ) ) (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )* otherlv_9= '}' )? otherlv_10= 'statement' otherlv_11= '{' ( (lv_statement_12_0= ruleStatement ) ) (otherlv_13= ',' ( (lv_statement_14_0= ruleStatement ) ) )* otherlv_15= '}' otherlv_16= '}' ) )
-            // InternalOpenDictatorDsl.g:225:2: (otherlv_0= 'StatementSet' otherlv_1= '{' otherlv_2= 'statementOperator' ( (lv_statementOperator_3_0= ruleStatementOperator ) ) (otherlv_4= 'statementset' otherlv_5= '{' ( (lv_statementset_6_0= ruleStatementSet ) ) (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )* otherlv_9= '}' )? otherlv_10= 'statement' otherlv_11= '{' ( (lv_statement_12_0= ruleStatement ) ) (otherlv_13= ',' ( (lv_statement_14_0= ruleStatement ) ) )* otherlv_15= '}' otherlv_16= '}' )
+            // InternalOpenDictatorDsl.g:220:2: ( ( ( (lv_statementOperator_0_0= ruleStatementOperator ) ) otherlv_1= '[' ( ( (lv_statementset_2_0= ruleStatementSet ) ) (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )* otherlv_5= ',' )? ( (lv_statement_6_0= ruleStatement ) ) (otherlv_7= ',' ( (lv_statement_8_0= ruleStatement ) ) )* (otherlv_9= ',' ( (lv_statementset_10_0= ruleStatementSet ) ) (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )* )? otherlv_13= ']' ) )
+            // InternalOpenDictatorDsl.g:221:2: ( ( (lv_statementOperator_0_0= ruleStatementOperator ) ) otherlv_1= '[' ( ( (lv_statementset_2_0= ruleStatementSet ) ) (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )* otherlv_5= ',' )? ( (lv_statement_6_0= ruleStatement ) ) (otherlv_7= ',' ( (lv_statement_8_0= ruleStatement ) ) )* (otherlv_9= ',' ( (lv_statementset_10_0= ruleStatementSet ) ) (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )* )? otherlv_13= ']' )
             {
-            // InternalOpenDictatorDsl.g:225:2: (otherlv_0= 'StatementSet' otherlv_1= '{' otherlv_2= 'statementOperator' ( (lv_statementOperator_3_0= ruleStatementOperator ) ) (otherlv_4= 'statementset' otherlv_5= '{' ( (lv_statementset_6_0= ruleStatementSet ) ) (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )* otherlv_9= '}' )? otherlv_10= 'statement' otherlv_11= '{' ( (lv_statement_12_0= ruleStatement ) ) (otherlv_13= ',' ( (lv_statement_14_0= ruleStatement ) ) )* otherlv_15= '}' otherlv_16= '}' )
-            // InternalOpenDictatorDsl.g:226:3: otherlv_0= 'StatementSet' otherlv_1= '{' otherlv_2= 'statementOperator' ( (lv_statementOperator_3_0= ruleStatementOperator ) ) (otherlv_4= 'statementset' otherlv_5= '{' ( (lv_statementset_6_0= ruleStatementSet ) ) (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )* otherlv_9= '}' )? otherlv_10= 'statement' otherlv_11= '{' ( (lv_statement_12_0= ruleStatement ) ) (otherlv_13= ',' ( (lv_statement_14_0= ruleStatement ) ) )* otherlv_15= '}' otherlv_16= '}'
+            // InternalOpenDictatorDsl.g:221:2: ( ( (lv_statementOperator_0_0= ruleStatementOperator ) ) otherlv_1= '[' ( ( (lv_statementset_2_0= ruleStatementSet ) ) (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )* otherlv_5= ',' )? ( (lv_statement_6_0= ruleStatement ) ) (otherlv_7= ',' ( (lv_statement_8_0= ruleStatement ) ) )* (otherlv_9= ',' ( (lv_statementset_10_0= ruleStatementSet ) ) (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )* )? otherlv_13= ']' )
+            // InternalOpenDictatorDsl.g:222:3: ( (lv_statementOperator_0_0= ruleStatementOperator ) ) otherlv_1= '[' ( ( (lv_statementset_2_0= ruleStatementSet ) ) (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )* otherlv_5= ',' )? ( (lv_statement_6_0= ruleStatement ) ) (otherlv_7= ',' ( (lv_statement_8_0= ruleStatement ) ) )* (otherlv_9= ',' ( (lv_statementset_10_0= ruleStatementSet ) ) (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )* )? otherlv_13= ']'
             {
-            otherlv_0=(Token)match(input,19,FOLLOW_3); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getStatementSetAccess().getStatementSetKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_13); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getStatementSetAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,20,FOLLOW_14); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getStatementSetAccess().getStatementOperatorKeyword_2());
-            		
-            // InternalOpenDictatorDsl.g:238:3: ( (lv_statementOperator_3_0= ruleStatementOperator ) )
-            // InternalOpenDictatorDsl.g:239:4: (lv_statementOperator_3_0= ruleStatementOperator )
+            // InternalOpenDictatorDsl.g:222:3: ( (lv_statementOperator_0_0= ruleStatementOperator ) )
+            // InternalOpenDictatorDsl.g:223:4: (lv_statementOperator_0_0= ruleStatementOperator )
             {
-            // InternalOpenDictatorDsl.g:239:4: (lv_statementOperator_3_0= ruleStatementOperator )
-            // InternalOpenDictatorDsl.g:240:5: lv_statementOperator_3_0= ruleStatementOperator
+            // InternalOpenDictatorDsl.g:223:4: (lv_statementOperator_0_0= ruleStatementOperator )
+            // InternalOpenDictatorDsl.g:224:5: lv_statementOperator_0_0= ruleStatementOperator
             {
 
-            					newCompositeNode(grammarAccess.getStatementSetAccess().getStatementOperatorStatementOperatorEnumRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getStatementSetAccess().getStatementOperatorStatementOperatorEnumRuleCall_0_0());
             				
-            pushFollow(FOLLOW_15);
-            lv_statementOperator_3_0=ruleStatementOperator();
+            pushFollow(FOLLOW_11);
+            lv_statementOperator_0_0=ruleStatementOperator();
 
             state._fsp--;
 
@@ -490,7 +461,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"statementOperator",
-            						lv_statementOperator_3_0,
+            						lv_statementOperator_0_0,
             						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.StatementOperator");
             					afterParserOrEnumRuleCall();
             				
@@ -500,36 +471,32 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOpenDictatorDsl.g:257:3: (otherlv_4= 'statementset' otherlv_5= '{' ( (lv_statementset_6_0= ruleStatementSet ) ) (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )* otherlv_9= '}' )?
+            otherlv_1=(Token)match(input,18,FOLLOW_12); 
+
+            			newLeafNode(otherlv_1, grammarAccess.getStatementSetAccess().getLeftSquareBracketKeyword_1());
+            		
+            // InternalOpenDictatorDsl.g:245:3: ( ( (lv_statementset_2_0= ruleStatementSet ) ) (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )* otherlv_5= ',' )?
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==16) ) {
+            if ( ((LA2_0>=23 && LA2_0<=25)) ) {
                 alt2=1;
             }
             switch (alt2) {
                 case 1 :
-                    // InternalOpenDictatorDsl.g:258:4: otherlv_4= 'statementset' otherlv_5= '{' ( (lv_statementset_6_0= ruleStatementSet ) ) (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )* otherlv_9= '}'
+                    // InternalOpenDictatorDsl.g:246:4: ( (lv_statementset_2_0= ruleStatementSet ) ) (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )* otherlv_5= ','
                     {
-                    otherlv_4=(Token)match(input,16,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getStatementSetAccess().getStatementsetKeyword_4_0());
-                    			
-                    otherlv_5=(Token)match(input,12,FOLLOW_9); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getStatementSetAccess().getLeftCurlyBracketKeyword_4_1());
-                    			
-                    // InternalOpenDictatorDsl.g:266:4: ( (lv_statementset_6_0= ruleStatementSet ) )
-                    // InternalOpenDictatorDsl.g:267:5: (lv_statementset_6_0= ruleStatementSet )
+                    // InternalOpenDictatorDsl.g:246:4: ( (lv_statementset_2_0= ruleStatementSet ) )
+                    // InternalOpenDictatorDsl.g:247:5: (lv_statementset_2_0= ruleStatementSet )
                     {
-                    // InternalOpenDictatorDsl.g:267:5: (lv_statementset_6_0= ruleStatementSet )
-                    // InternalOpenDictatorDsl.g:268:6: lv_statementset_6_0= ruleStatementSet
+                    // InternalOpenDictatorDsl.g:247:5: (lv_statementset_2_0= ruleStatementSet )
+                    // InternalOpenDictatorDsl.g:248:6: lv_statementset_2_0= ruleStatementSet
                     {
 
-                    						newCompositeNode(grammarAccess.getStatementSetAccess().getStatementsetStatementSetParserRuleCall_4_2_0());
+                    						newCompositeNode(grammarAccess.getStatementSetAccess().getStatementsetStatementSetParserRuleCall_2_0_0());
                     					
-                    pushFollow(FOLLOW_16);
-                    lv_statementset_6_0=ruleStatementSet();
+                    pushFollow(FOLLOW_13);
+                    lv_statementset_2_0=ruleStatementSet();
 
                     state._fsp--;
 
@@ -540,7 +507,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     						add(
                     							current,
                     							"statementset",
-                    							lv_statementset_6_0,
+                    							lv_statementset_2_0,
                     							"org.xtext.example.openDictatorDsl.OpenDictatorDsl.StatementSet");
                     						afterParserOrEnumRuleCall();
                     					
@@ -550,36 +517,42 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalOpenDictatorDsl.g:285:4: (otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) ) )*
+                    // InternalOpenDictatorDsl.g:265:4: (otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) ) )*
                     loop1:
                     do {
                         int alt1=2;
                         int LA1_0 = input.LA(1);
 
-                        if ( (LA1_0==21) ) {
-                            alt1=1;
+                        if ( (LA1_0==19) ) {
+                            int LA1_1 = input.LA(2);
+
+                            if ( ((LA1_1>=23 && LA1_1<=25)) ) {
+                                alt1=1;
+                            }
+
+
                         }
 
 
                         switch (alt1) {
                     	case 1 :
-                    	    // InternalOpenDictatorDsl.g:286:5: otherlv_7= ',' ( (lv_statementset_8_0= ruleStatementSet ) )
+                    	    // InternalOpenDictatorDsl.g:266:5: otherlv_3= ',' ( (lv_statementset_4_0= ruleStatementSet ) )
                     	    {
-                    	    otherlv_7=(Token)match(input,21,FOLLOW_9); 
+                    	    otherlv_3=(Token)match(input,19,FOLLOW_9); 
 
-                    	    					newLeafNode(otherlv_7, grammarAccess.getStatementSetAccess().getCommaKeyword_4_3_0());
+                    	    					newLeafNode(otherlv_3, grammarAccess.getStatementSetAccess().getCommaKeyword_2_1_0());
                     	    				
-                    	    // InternalOpenDictatorDsl.g:290:5: ( (lv_statementset_8_0= ruleStatementSet ) )
-                    	    // InternalOpenDictatorDsl.g:291:6: (lv_statementset_8_0= ruleStatementSet )
+                    	    // InternalOpenDictatorDsl.g:270:5: ( (lv_statementset_4_0= ruleStatementSet ) )
+                    	    // InternalOpenDictatorDsl.g:271:6: (lv_statementset_4_0= ruleStatementSet )
                     	    {
-                    	    // InternalOpenDictatorDsl.g:291:6: (lv_statementset_8_0= ruleStatementSet )
-                    	    // InternalOpenDictatorDsl.g:292:7: lv_statementset_8_0= ruleStatementSet
+                    	    // InternalOpenDictatorDsl.g:271:6: (lv_statementset_4_0= ruleStatementSet )
+                    	    // InternalOpenDictatorDsl.g:272:7: lv_statementset_4_0= ruleStatementSet
                     	    {
 
-                    	    							newCompositeNode(grammarAccess.getStatementSetAccess().getStatementsetStatementSetParserRuleCall_4_3_1_0());
+                    	    							newCompositeNode(grammarAccess.getStatementSetAccess().getStatementsetStatementSetParserRuleCall_2_1_1_0());
                     	    						
-                    	    pushFollow(FOLLOW_16);
-                    	    lv_statementset_8_0=ruleStatementSet();
+                    	    pushFollow(FOLLOW_13);
+                    	    lv_statementset_4_0=ruleStatementSet();
 
                     	    state._fsp--;
 
@@ -590,7 +563,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     	    							add(
                     	    								current,
                     	    								"statementset",
-                    	    								lv_statementset_8_0,
+                    	    								lv_statementset_4_0,
                     	    								"org.xtext.example.openDictatorDsl.OpenDictatorDsl.StatementSet");
                     	    							afterParserOrEnumRuleCall();
                     	    						
@@ -609,9 +582,9 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                         }
                     } while (true);
 
-                    otherlv_9=(Token)match(input,18,FOLLOW_17); 
+                    otherlv_5=(Token)match(input,19,FOLLOW_12); 
 
-                    				newLeafNode(otherlv_9, grammarAccess.getStatementSetAccess().getRightCurlyBracketKeyword_4_4());
+                    				newLeafNode(otherlv_5, grammarAccess.getStatementSetAccess().getCommaKeyword_2_2());
                     			
 
                     }
@@ -619,25 +592,17 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,22,FOLLOW_3); 
-
-            			newLeafNode(otherlv_10, grammarAccess.getStatementSetAccess().getStatementKeyword_5());
-            		
-            otherlv_11=(Token)match(input,12,FOLLOW_18); 
-
-            			newLeafNode(otherlv_11, grammarAccess.getStatementSetAccess().getLeftCurlyBracketKeyword_6());
-            		
-            // InternalOpenDictatorDsl.g:323:3: ( (lv_statement_12_0= ruleStatement ) )
-            // InternalOpenDictatorDsl.g:324:4: (lv_statement_12_0= ruleStatement )
+            // InternalOpenDictatorDsl.g:295:3: ( (lv_statement_6_0= ruleStatement ) )
+            // InternalOpenDictatorDsl.g:296:4: (lv_statement_6_0= ruleStatement )
             {
-            // InternalOpenDictatorDsl.g:324:4: (lv_statement_12_0= ruleStatement )
-            // InternalOpenDictatorDsl.g:325:5: lv_statement_12_0= ruleStatement
+            // InternalOpenDictatorDsl.g:296:4: (lv_statement_6_0= ruleStatement )
+            // InternalOpenDictatorDsl.g:297:5: lv_statement_6_0= ruleStatement
             {
 
-            					newCompositeNode(grammarAccess.getStatementSetAccess().getStatementStatementParserRuleCall_7_0());
+            					newCompositeNode(grammarAccess.getStatementSetAccess().getStatementStatementParserRuleCall_3_0());
             				
-            pushFollow(FOLLOW_16);
-            lv_statement_12_0=ruleStatement();
+            pushFollow(FOLLOW_14);
+            lv_statement_6_0=ruleStatement();
 
             state._fsp--;
 
@@ -648,7 +613,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             					add(
             						current,
             						"statement",
-            						lv_statement_12_0,
+            						lv_statement_6_0,
             						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.Statement");
             					afterParserOrEnumRuleCall();
             				
@@ -658,36 +623,42 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalOpenDictatorDsl.g:342:3: (otherlv_13= ',' ( (lv_statement_14_0= ruleStatement ) ) )*
+            // InternalOpenDictatorDsl.g:314:3: (otherlv_7= ',' ( (lv_statement_8_0= ruleStatement ) ) )*
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( (LA3_0==21) ) {
-                    alt3=1;
+                if ( (LA3_0==19) ) {
+                    int LA3_1 = input.LA(2);
+
+                    if ( ((LA3_1>=RULE_STRING && LA3_1<=RULE_ID)||(LA3_1>=26 && LA3_1<=31)) ) {
+                        alt3=1;
+                    }
+
+
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalOpenDictatorDsl.g:343:4: otherlv_13= ',' ( (lv_statement_14_0= ruleStatement ) )
+            	    // InternalOpenDictatorDsl.g:315:4: otherlv_7= ',' ( (lv_statement_8_0= ruleStatement ) )
             	    {
-            	    otherlv_13=(Token)match(input,21,FOLLOW_18); 
+            	    otherlv_7=(Token)match(input,19,FOLLOW_12); 
 
-            	    				newLeafNode(otherlv_13, grammarAccess.getStatementSetAccess().getCommaKeyword_8_0());
+            	    				newLeafNode(otherlv_7, grammarAccess.getStatementSetAccess().getCommaKeyword_4_0());
             	    			
-            	    // InternalOpenDictatorDsl.g:347:4: ( (lv_statement_14_0= ruleStatement ) )
-            	    // InternalOpenDictatorDsl.g:348:5: (lv_statement_14_0= ruleStatement )
+            	    // InternalOpenDictatorDsl.g:319:4: ( (lv_statement_8_0= ruleStatement ) )
+            	    // InternalOpenDictatorDsl.g:320:5: (lv_statement_8_0= ruleStatement )
             	    {
-            	    // InternalOpenDictatorDsl.g:348:5: (lv_statement_14_0= ruleStatement )
-            	    // InternalOpenDictatorDsl.g:349:6: lv_statement_14_0= ruleStatement
+            	    // InternalOpenDictatorDsl.g:320:5: (lv_statement_8_0= ruleStatement )
+            	    // InternalOpenDictatorDsl.g:321:6: lv_statement_8_0= ruleStatement
             	    {
 
-            	    						newCompositeNode(grammarAccess.getStatementSetAccess().getStatementStatementParserRuleCall_8_1_0());
+            	    						newCompositeNode(grammarAccess.getStatementSetAccess().getStatementStatementParserRuleCall_4_1_0());
             	    					
-            	    pushFollow(FOLLOW_16);
-            	    lv_statement_14_0=ruleStatement();
+            	    pushFollow(FOLLOW_14);
+            	    lv_statement_8_0=ruleStatement();
 
             	    state._fsp--;
 
@@ -698,7 +669,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             	    						add(
             	    							current,
             	    							"statement",
-            	    							lv_statement_14_0,
+            	    							lv_statement_8_0,
             	    							"org.xtext.example.openDictatorDsl.OpenDictatorDsl.Statement");
             	    						afterParserOrEnumRuleCall();
             	    					
@@ -717,13 +688,120 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                 }
             } while (true);
 
-            otherlv_15=(Token)match(input,18,FOLLOW_12); 
+            // InternalOpenDictatorDsl.g:339:3: (otherlv_9= ',' ( (lv_statementset_10_0= ruleStatementSet ) ) (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )* )?
+            int alt5=2;
+            int LA5_0 = input.LA(1);
 
-            			newLeafNode(otherlv_15, grammarAccess.getStatementSetAccess().getRightCurlyBracketKeyword_9());
-            		
-            otherlv_16=(Token)match(input,18,FOLLOW_2); 
+            if ( (LA5_0==19) ) {
+                alt5=1;
+            }
+            switch (alt5) {
+                case 1 :
+                    // InternalOpenDictatorDsl.g:340:4: otherlv_9= ',' ( (lv_statementset_10_0= ruleStatementSet ) ) (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )*
+                    {
+                    otherlv_9=(Token)match(input,19,FOLLOW_9); 
 
-            			newLeafNode(otherlv_16, grammarAccess.getStatementSetAccess().getRightCurlyBracketKeyword_10());
+                    				newLeafNode(otherlv_9, grammarAccess.getStatementSetAccess().getCommaKeyword_5_0());
+                    			
+                    // InternalOpenDictatorDsl.g:344:4: ( (lv_statementset_10_0= ruleStatementSet ) )
+                    // InternalOpenDictatorDsl.g:345:5: (lv_statementset_10_0= ruleStatementSet )
+                    {
+                    // InternalOpenDictatorDsl.g:345:5: (lv_statementset_10_0= ruleStatementSet )
+                    // InternalOpenDictatorDsl.g:346:6: lv_statementset_10_0= ruleStatementSet
+                    {
+
+                    						newCompositeNode(grammarAccess.getStatementSetAccess().getStatementsetStatementSetParserRuleCall_5_1_0());
+                    					
+                    pushFollow(FOLLOW_14);
+                    lv_statementset_10_0=ruleStatementSet();
+
+                    state._fsp--;
+
+
+                    						if (current==null) {
+                    							current = createModelElementForParent(grammarAccess.getStatementSetRule());
+                    						}
+                    						add(
+                    							current,
+                    							"statementset",
+                    							lv_statementset_10_0,
+                    							"org.xtext.example.openDictatorDsl.OpenDictatorDsl.StatementSet");
+                    						afterParserOrEnumRuleCall();
+                    					
+
+                    }
+
+
+                    }
+
+                    // InternalOpenDictatorDsl.g:363:4: (otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) ) )*
+                    loop4:
+                    do {
+                        int alt4=2;
+                        int LA4_0 = input.LA(1);
+
+                        if ( (LA4_0==19) ) {
+                            alt4=1;
+                        }
+
+
+                        switch (alt4) {
+                    	case 1 :
+                    	    // InternalOpenDictatorDsl.g:364:5: otherlv_11= ',' ( (lv_statementset_12_0= ruleStatementSet ) )
+                    	    {
+                    	    otherlv_11=(Token)match(input,19,FOLLOW_9); 
+
+                    	    					newLeafNode(otherlv_11, grammarAccess.getStatementSetAccess().getCommaKeyword_5_2_0());
+                    	    				
+                    	    // InternalOpenDictatorDsl.g:368:5: ( (lv_statementset_12_0= ruleStatementSet ) )
+                    	    // InternalOpenDictatorDsl.g:369:6: (lv_statementset_12_0= ruleStatementSet )
+                    	    {
+                    	    // InternalOpenDictatorDsl.g:369:6: (lv_statementset_12_0= ruleStatementSet )
+                    	    // InternalOpenDictatorDsl.g:370:7: lv_statementset_12_0= ruleStatementSet
+                    	    {
+
+                    	    							newCompositeNode(grammarAccess.getStatementSetAccess().getStatementsetStatementSetParserRuleCall_5_2_1_0());
+                    	    						
+                    	    pushFollow(FOLLOW_14);
+                    	    lv_statementset_12_0=ruleStatementSet();
+
+                    	    state._fsp--;
+
+
+                    	    							if (current==null) {
+                    	    								current = createModelElementForParent(grammarAccess.getStatementSetRule());
+                    	    							}
+                    	    							add(
+                    	    								current,
+                    	    								"statementset",
+                    	    								lv_statementset_12_0,
+                    	    								"org.xtext.example.openDictatorDsl.OpenDictatorDsl.StatementSet");
+                    	    							afterParserOrEnumRuleCall();
+                    	    						
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop4;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_13=(Token)match(input,20,FOLLOW_2); 
+
+            			newLeafNode(otherlv_13, grammarAccess.getStatementSetAccess().getRightSquareBracketKeyword_6());
             		
 
             }
@@ -748,7 +826,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleInputFile"
-    // InternalOpenDictatorDsl.g:379:1: entryRuleInputFile returns [EObject current=null] : iv_ruleInputFile= ruleInputFile EOF ;
+    // InternalOpenDictatorDsl.g:397:1: entryRuleInputFile returns [EObject current=null] : iv_ruleInputFile= ruleInputFile EOF ;
     public final EObject entryRuleInputFile() throws RecognitionException {
         EObject current = null;
 
@@ -756,8 +834,8 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOpenDictatorDsl.g:379:50: (iv_ruleInputFile= ruleInputFile EOF )
-            // InternalOpenDictatorDsl.g:380:2: iv_ruleInputFile= ruleInputFile EOF
+            // InternalOpenDictatorDsl.g:397:50: (iv_ruleInputFile= ruleInputFile EOF )
+            // InternalOpenDictatorDsl.g:398:2: iv_ruleInputFile= ruleInputFile EOF
             {
              newCompositeNode(grammarAccess.getInputFileRule()); 
             pushFollow(FOLLOW_1);
@@ -784,74 +862,48 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleInputFile"
-    // InternalOpenDictatorDsl.g:386:1: ruleInputFile returns [EObject current=null] : (otherlv_0= 'InputFile' otherlv_1= '{' otherlv_2= 'fileLocation' ( (lv_fileLocation_3_0= ruleEString ) ) otherlv_4= '}' ) ;
+    // InternalOpenDictatorDsl.g:404:1: ruleInputFile returns [EObject current=null] : ( (lv_fileLocation_0_0= ruleEString ) ) ;
     public final EObject ruleInputFile() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_fileLocation_3_0 = null;
+        AntlrDatatypeRuleToken lv_fileLocation_0_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:392:2: ( (otherlv_0= 'InputFile' otherlv_1= '{' otherlv_2= 'fileLocation' ( (lv_fileLocation_3_0= ruleEString ) ) otherlv_4= '}' ) )
-            // InternalOpenDictatorDsl.g:393:2: (otherlv_0= 'InputFile' otherlv_1= '{' otherlv_2= 'fileLocation' ( (lv_fileLocation_3_0= ruleEString ) ) otherlv_4= '}' )
+            // InternalOpenDictatorDsl.g:410:2: ( ( (lv_fileLocation_0_0= ruleEString ) ) )
+            // InternalOpenDictatorDsl.g:411:2: ( (lv_fileLocation_0_0= ruleEString ) )
             {
-            // InternalOpenDictatorDsl.g:393:2: (otherlv_0= 'InputFile' otherlv_1= '{' otherlv_2= 'fileLocation' ( (lv_fileLocation_3_0= ruleEString ) ) otherlv_4= '}' )
-            // InternalOpenDictatorDsl.g:394:3: otherlv_0= 'InputFile' otherlv_1= '{' otherlv_2= 'fileLocation' ( (lv_fileLocation_3_0= ruleEString ) ) otherlv_4= '}'
+            // InternalOpenDictatorDsl.g:411:2: ( (lv_fileLocation_0_0= ruleEString ) )
+            // InternalOpenDictatorDsl.g:412:3: (lv_fileLocation_0_0= ruleEString )
             {
-            otherlv_0=(Token)match(input,23,FOLLOW_3); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getInputFileAccess().getInputFileKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_19); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getInputFileAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,24,FOLLOW_5); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getInputFileAccess().getFileLocationKeyword_2());
-            		
-            // InternalOpenDictatorDsl.g:406:3: ( (lv_fileLocation_3_0= ruleEString ) )
-            // InternalOpenDictatorDsl.g:407:4: (lv_fileLocation_3_0= ruleEString )
-            {
-            // InternalOpenDictatorDsl.g:407:4: (lv_fileLocation_3_0= ruleEString )
-            // InternalOpenDictatorDsl.g:408:5: lv_fileLocation_3_0= ruleEString
+            // InternalOpenDictatorDsl.g:412:3: (lv_fileLocation_0_0= ruleEString )
+            // InternalOpenDictatorDsl.g:413:4: lv_fileLocation_0_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getInputFileAccess().getFileLocationEStringParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_12);
-            lv_fileLocation_3_0=ruleEString();
+            				newCompositeNode(grammarAccess.getInputFileAccess().getFileLocationEStringParserRuleCall_0());
+            			
+            pushFollow(FOLLOW_2);
+            lv_fileLocation_0_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getInputFileRule());
-            					}
-            					set(
-            						current,
-            						"fileLocation",
-            						lv_fileLocation_3_0,
-            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
-            					afterParserOrEnumRuleCall();
-            				
+            				if (current==null) {
+            					current = createModelElementForParent(grammarAccess.getInputFileRule());
+            				}
+            				set(
+            					current,
+            					"fileLocation",
+            					lv_fileLocation_0_0,
+            					"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
+            				afterParserOrEnumRuleCall();
+            			
 
             }
 
-
-            }
-
-            otherlv_4=(Token)match(input,18,FOLLOW_2); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getInputFileAccess().getRightCurlyBracketKeyword_4());
-            		
 
             }
 
@@ -926,22 +978,22 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             // InternalOpenDictatorDsl.g:447:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
             {
             // InternalOpenDictatorDsl.g:447:2: (this_STRING_0= RULE_STRING | this_ID_1= RULE_ID )
-            int alt4=2;
-            int LA4_0 = input.LA(1);
+            int alt6=2;
+            int LA6_0 = input.LA(1);
 
-            if ( (LA4_0==RULE_STRING) ) {
-                alt4=1;
+            if ( (LA6_0==RULE_STRING) ) {
+                alt6=1;
             }
-            else if ( (LA4_0==RULE_ID) ) {
-                alt4=2;
+            else if ( (LA6_0==RULE_ID) ) {
+                alt6=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 4, 0, input);
+                    new NoViableAltException("", 6, 0, input);
 
                 throw nvae;
             }
-            switch (alt4) {
+            switch (alt6) {
                 case 1 :
                     // InternalOpenDictatorDsl.g:448:3: this_STRING_0= RULE_STRING
                     {
@@ -1027,218 +1079,82 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatement"
-    // InternalOpenDictatorDsl.g:474:1: ruleStatement returns [EObject current=null] : (otherlv_0= 'Statement' otherlv_1= '{' otherlv_2= 'evaluationOperator' ( (lv_evaluationOperator_3_0= ruleEvaluationOperator ) ) (otherlv_4= 'prefixEvaluationOperator' otherlv_5= '{' ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) ) (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )* otherlv_9= '}' )? otherlv_10= 'jsonquery' ( (lv_jsonquery_11_0= ruleJsonQuery ) ) otherlv_12= 'value' ( (lv_value_13_0= ruleValue ) ) otherlv_14= '}' ) ;
+    // InternalOpenDictatorDsl.g:474:1: ruleStatement returns [EObject current=null] : ( ( (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator ) )? ( (lv_jsonquery_1_0= ruleJsonQuery ) ) ( (lv_evaluationOperator_2_0= ruleEvaluationOperator ) ) ( (lv_value_3_0= ruleValue ) ) ) ;
     public final EObject ruleStatement() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_5=null;
-        Token otherlv_7=null;
-        Token otherlv_9=null;
-        Token otherlv_10=null;
-        Token otherlv_12=null;
-        Token otherlv_14=null;
-        Enumerator lv_evaluationOperator_3_0 = null;
+        Enumerator lv_prefixEvaluationOperator_0_0 = null;
 
-        Enumerator lv_prefixEvaluationOperator_6_0 = null;
+        EObject lv_jsonquery_1_0 = null;
 
-        Enumerator lv_prefixEvaluationOperator_8_0 = null;
+        Enumerator lv_evaluationOperator_2_0 = null;
 
-        EObject lv_jsonquery_11_0 = null;
-
-        EObject lv_value_13_0 = null;
+        EObject lv_value_3_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:480:2: ( (otherlv_0= 'Statement' otherlv_1= '{' otherlv_2= 'evaluationOperator' ( (lv_evaluationOperator_3_0= ruleEvaluationOperator ) ) (otherlv_4= 'prefixEvaluationOperator' otherlv_5= '{' ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) ) (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )* otherlv_9= '}' )? otherlv_10= 'jsonquery' ( (lv_jsonquery_11_0= ruleJsonQuery ) ) otherlv_12= 'value' ( (lv_value_13_0= ruleValue ) ) otherlv_14= '}' ) )
-            // InternalOpenDictatorDsl.g:481:2: (otherlv_0= 'Statement' otherlv_1= '{' otherlv_2= 'evaluationOperator' ( (lv_evaluationOperator_3_0= ruleEvaluationOperator ) ) (otherlv_4= 'prefixEvaluationOperator' otherlv_5= '{' ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) ) (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )* otherlv_9= '}' )? otherlv_10= 'jsonquery' ( (lv_jsonquery_11_0= ruleJsonQuery ) ) otherlv_12= 'value' ( (lv_value_13_0= ruleValue ) ) otherlv_14= '}' )
+            // InternalOpenDictatorDsl.g:480:2: ( ( ( (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator ) )? ( (lv_jsonquery_1_0= ruleJsonQuery ) ) ( (lv_evaluationOperator_2_0= ruleEvaluationOperator ) ) ( (lv_value_3_0= ruleValue ) ) ) )
+            // InternalOpenDictatorDsl.g:481:2: ( ( (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator ) )? ( (lv_jsonquery_1_0= ruleJsonQuery ) ) ( (lv_evaluationOperator_2_0= ruleEvaluationOperator ) ) ( (lv_value_3_0= ruleValue ) ) )
             {
-            // InternalOpenDictatorDsl.g:481:2: (otherlv_0= 'Statement' otherlv_1= '{' otherlv_2= 'evaluationOperator' ( (lv_evaluationOperator_3_0= ruleEvaluationOperator ) ) (otherlv_4= 'prefixEvaluationOperator' otherlv_5= '{' ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) ) (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )* otherlv_9= '}' )? otherlv_10= 'jsonquery' ( (lv_jsonquery_11_0= ruleJsonQuery ) ) otherlv_12= 'value' ( (lv_value_13_0= ruleValue ) ) otherlv_14= '}' )
-            // InternalOpenDictatorDsl.g:482:3: otherlv_0= 'Statement' otherlv_1= '{' otherlv_2= 'evaluationOperator' ( (lv_evaluationOperator_3_0= ruleEvaluationOperator ) ) (otherlv_4= 'prefixEvaluationOperator' otherlv_5= '{' ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) ) (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )* otherlv_9= '}' )? otherlv_10= 'jsonquery' ( (lv_jsonquery_11_0= ruleJsonQuery ) ) otherlv_12= 'value' ( (lv_value_13_0= ruleValue ) ) otherlv_14= '}'
+            // InternalOpenDictatorDsl.g:481:2: ( ( (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator ) )? ( (lv_jsonquery_1_0= ruleJsonQuery ) ) ( (lv_evaluationOperator_2_0= ruleEvaluationOperator ) ) ( (lv_value_3_0= ruleValue ) ) )
+            // InternalOpenDictatorDsl.g:482:3: ( (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator ) )? ( (lv_jsonquery_1_0= ruleJsonQuery ) ) ( (lv_evaluationOperator_2_0= ruleEvaluationOperator ) ) ( (lv_value_3_0= ruleValue ) )
             {
-            otherlv_0=(Token)match(input,25,FOLLOW_3); 
+            // InternalOpenDictatorDsl.g:482:3: ( (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator ) )?
+            int alt7=2;
+            int LA7_0 = input.LA(1);
 
-            			newLeafNode(otherlv_0, grammarAccess.getStatementAccess().getStatementKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_20); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getStatementAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,26,FOLLOW_21); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getStatementAccess().getEvaluationOperatorKeyword_2());
-            		
-            // InternalOpenDictatorDsl.g:494:3: ( (lv_evaluationOperator_3_0= ruleEvaluationOperator ) )
-            // InternalOpenDictatorDsl.g:495:4: (lv_evaluationOperator_3_0= ruleEvaluationOperator )
-            {
-            // InternalOpenDictatorDsl.g:495:4: (lv_evaluationOperator_3_0= ruleEvaluationOperator )
-            // InternalOpenDictatorDsl.g:496:5: lv_evaluationOperator_3_0= ruleEvaluationOperator
-            {
-
-            					newCompositeNode(grammarAccess.getStatementAccess().getEvaluationOperatorEvaluationOperatorEnumRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_22);
-            lv_evaluationOperator_3_0=ruleEvaluationOperator();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getStatementRule());
-            					}
-            					set(
-            						current,
-            						"evaluationOperator",
-            						lv_evaluationOperator_3_0,
-            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EvaluationOperator");
-            					afterParserOrEnumRuleCall();
-            				
-
+            if ( ((LA7_0>=26 && LA7_0<=31)) ) {
+                alt7=1;
             }
-
-
-            }
-
-            // InternalOpenDictatorDsl.g:513:3: (otherlv_4= 'prefixEvaluationOperator' otherlv_5= '{' ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) ) (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )* otherlv_9= '}' )?
-            int alt6=2;
-            int LA6_0 = input.LA(1);
-
-            if ( (LA6_0==27) ) {
-                alt6=1;
-            }
-            switch (alt6) {
+            switch (alt7) {
                 case 1 :
-                    // InternalOpenDictatorDsl.g:514:4: otherlv_4= 'prefixEvaluationOperator' otherlv_5= '{' ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) ) (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )* otherlv_9= '}'
+                    // InternalOpenDictatorDsl.g:483:4: (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator )
                     {
-                    otherlv_4=(Token)match(input,27,FOLLOW_3); 
-
-                    				newLeafNode(otherlv_4, grammarAccess.getStatementAccess().getPrefixEvaluationOperatorKeyword_4_0());
-                    			
-                    otherlv_5=(Token)match(input,12,FOLLOW_21); 
-
-                    				newLeafNode(otherlv_5, grammarAccess.getStatementAccess().getLeftCurlyBracketKeyword_4_1());
-                    			
-                    // InternalOpenDictatorDsl.g:522:4: ( (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator ) )
-                    // InternalOpenDictatorDsl.g:523:5: (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator )
-                    {
-                    // InternalOpenDictatorDsl.g:523:5: (lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator )
-                    // InternalOpenDictatorDsl.g:524:6: lv_prefixEvaluationOperator_6_0= ruleEvaluationOperator
+                    // InternalOpenDictatorDsl.g:483:4: (lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator )
+                    // InternalOpenDictatorDsl.g:484:5: lv_prefixEvaluationOperator_0_0= ruleEvaluationOperator
                     {
 
-                    						newCompositeNode(grammarAccess.getStatementAccess().getPrefixEvaluationOperatorEvaluationOperatorEnumRuleCall_4_2_0());
-                    					
-                    pushFollow(FOLLOW_16);
-                    lv_prefixEvaluationOperator_6_0=ruleEvaluationOperator();
+                    					newCompositeNode(grammarAccess.getStatementAccess().getPrefixEvaluationOperatorEvaluationOperatorEnumRuleCall_0_0());
+                    				
+                    pushFollow(FOLLOW_12);
+                    lv_prefixEvaluationOperator_0_0=ruleEvaluationOperator();
 
                     state._fsp--;
 
 
-                    						if (current==null) {
-                    							current = createModelElementForParent(grammarAccess.getStatementRule());
-                    						}
-                    						add(
-                    							current,
-                    							"prefixEvaluationOperator",
-                    							lv_prefixEvaluationOperator_6_0,
-                    							"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EvaluationOperator");
-                    						afterParserOrEnumRuleCall();
-                    					
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getStatementRule());
+                    					}
+                    					add(
+                    						current,
+                    						"prefixEvaluationOperator",
+                    						lv_prefixEvaluationOperator_0_0,
+                    						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EvaluationOperator");
+                    					afterParserOrEnumRuleCall();
+                    				
 
                     }
 
-
-                    }
-
-                    // InternalOpenDictatorDsl.g:541:4: (otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) ) )*
-                    loop5:
-                    do {
-                        int alt5=2;
-                        int LA5_0 = input.LA(1);
-
-                        if ( (LA5_0==21) ) {
-                            alt5=1;
-                        }
-
-
-                        switch (alt5) {
-                    	case 1 :
-                    	    // InternalOpenDictatorDsl.g:542:5: otherlv_7= ',' ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) )
-                    	    {
-                    	    otherlv_7=(Token)match(input,21,FOLLOW_21); 
-
-                    	    					newLeafNode(otherlv_7, grammarAccess.getStatementAccess().getCommaKeyword_4_3_0());
-                    	    				
-                    	    // InternalOpenDictatorDsl.g:546:5: ( (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator ) )
-                    	    // InternalOpenDictatorDsl.g:547:6: (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator )
-                    	    {
-                    	    // InternalOpenDictatorDsl.g:547:6: (lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator )
-                    	    // InternalOpenDictatorDsl.g:548:7: lv_prefixEvaluationOperator_8_0= ruleEvaluationOperator
-                    	    {
-
-                    	    							newCompositeNode(grammarAccess.getStatementAccess().getPrefixEvaluationOperatorEvaluationOperatorEnumRuleCall_4_3_1_0());
-                    	    						
-                    	    pushFollow(FOLLOW_16);
-                    	    lv_prefixEvaluationOperator_8_0=ruleEvaluationOperator();
-
-                    	    state._fsp--;
-
-
-                    	    							if (current==null) {
-                    	    								current = createModelElementForParent(grammarAccess.getStatementRule());
-                    	    							}
-                    	    							add(
-                    	    								current,
-                    	    								"prefixEvaluationOperator",
-                    	    								lv_prefixEvaluationOperator_8_0,
-                    	    								"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EvaluationOperator");
-                    	    							afterParserOrEnumRuleCall();
-                    	    						
-
-                    	    }
-
-
-                    	    }
-
-
-                    	    }
-                    	    break;
-
-                    	default :
-                    	    break loop5;
-                        }
-                    } while (true);
-
-                    otherlv_9=(Token)match(input,18,FOLLOW_23); 
-
-                    				newLeafNode(otherlv_9, grammarAccess.getStatementAccess().getRightCurlyBracketKeyword_4_4());
-                    			
 
                     }
                     break;
 
             }
 
-            otherlv_10=(Token)match(input,28,FOLLOW_24); 
-
-            			newLeafNode(otherlv_10, grammarAccess.getStatementAccess().getJsonqueryKeyword_5());
-            		
-            // InternalOpenDictatorDsl.g:575:3: ( (lv_jsonquery_11_0= ruleJsonQuery ) )
-            // InternalOpenDictatorDsl.g:576:4: (lv_jsonquery_11_0= ruleJsonQuery )
+            // InternalOpenDictatorDsl.g:501:3: ( (lv_jsonquery_1_0= ruleJsonQuery ) )
+            // InternalOpenDictatorDsl.g:502:4: (lv_jsonquery_1_0= ruleJsonQuery )
             {
-            // InternalOpenDictatorDsl.g:576:4: (lv_jsonquery_11_0= ruleJsonQuery )
-            // InternalOpenDictatorDsl.g:577:5: lv_jsonquery_11_0= ruleJsonQuery
+            // InternalOpenDictatorDsl.g:502:4: (lv_jsonquery_1_0= ruleJsonQuery )
+            // InternalOpenDictatorDsl.g:503:5: lv_jsonquery_1_0= ruleJsonQuery
             {
 
-            					newCompositeNode(grammarAccess.getStatementAccess().getJsonqueryJsonQueryParserRuleCall_6_0());
+            					newCompositeNode(grammarAccess.getStatementAccess().getJsonqueryJsonQueryParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_25);
-            lv_jsonquery_11_0=ruleJsonQuery();
+            pushFollow(FOLLOW_15);
+            lv_jsonquery_1_0=ruleJsonQuery();
 
             state._fsp--;
 
@@ -1249,7 +1165,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"jsonquery",
-            						lv_jsonquery_11_0,
+            						lv_jsonquery_1_0,
             						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.JsonQuery");
             					afterParserOrEnumRuleCall();
             				
@@ -1259,21 +1175,48 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_12=(Token)match(input,29,FOLLOW_26); 
-
-            			newLeafNode(otherlv_12, grammarAccess.getStatementAccess().getValueKeyword_7());
-            		
-            // InternalOpenDictatorDsl.g:598:3: ( (lv_value_13_0= ruleValue ) )
-            // InternalOpenDictatorDsl.g:599:4: (lv_value_13_0= ruleValue )
+            // InternalOpenDictatorDsl.g:520:3: ( (lv_evaluationOperator_2_0= ruleEvaluationOperator ) )
+            // InternalOpenDictatorDsl.g:521:4: (lv_evaluationOperator_2_0= ruleEvaluationOperator )
             {
-            // InternalOpenDictatorDsl.g:599:4: (lv_value_13_0= ruleValue )
-            // InternalOpenDictatorDsl.g:600:5: lv_value_13_0= ruleValue
+            // InternalOpenDictatorDsl.g:521:4: (lv_evaluationOperator_2_0= ruleEvaluationOperator )
+            // InternalOpenDictatorDsl.g:522:5: lv_evaluationOperator_2_0= ruleEvaluationOperator
             {
 
-            					newCompositeNode(grammarAccess.getStatementAccess().getValueValueParserRuleCall_8_0());
+            					newCompositeNode(grammarAccess.getStatementAccess().getEvaluationOperatorEvaluationOperatorEnumRuleCall_2_0());
             				
-            pushFollow(FOLLOW_12);
-            lv_value_13_0=ruleValue();
+            pushFollow(FOLLOW_16);
+            lv_evaluationOperator_2_0=ruleEvaluationOperator();
+
+            state._fsp--;
+
+
+            					if (current==null) {
+            						current = createModelElementForParent(grammarAccess.getStatementRule());
+            					}
+            					set(
+            						current,
+            						"evaluationOperator",
+            						lv_evaluationOperator_2_0,
+            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EvaluationOperator");
+            					afterParserOrEnumRuleCall();
+            				
+
+            }
+
+
+            }
+
+            // InternalOpenDictatorDsl.g:539:3: ( (lv_value_3_0= ruleValue ) )
+            // InternalOpenDictatorDsl.g:540:4: (lv_value_3_0= ruleValue )
+            {
+            // InternalOpenDictatorDsl.g:540:4: (lv_value_3_0= ruleValue )
+            // InternalOpenDictatorDsl.g:541:5: lv_value_3_0= ruleValue
+            {
+
+            					newCompositeNode(grammarAccess.getStatementAccess().getValueValueParserRuleCall_3_0());
+            				
+            pushFollow(FOLLOW_2);
+            lv_value_3_0=ruleValue();
 
             state._fsp--;
 
@@ -1284,7 +1227,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"value",
-            						lv_value_13_0,
+            						lv_value_3_0,
             						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.Value");
             					afterParserOrEnumRuleCall();
             				
@@ -1294,10 +1237,6 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_14=(Token)match(input,18,FOLLOW_2); 
-
-            			newLeafNode(otherlv_14, grammarAccess.getStatementAccess().getRightCurlyBracketKeyword_9());
-            		
 
             }
 
@@ -1321,7 +1260,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleJsonQuery"
-    // InternalOpenDictatorDsl.g:625:1: entryRuleJsonQuery returns [EObject current=null] : iv_ruleJsonQuery= ruleJsonQuery EOF ;
+    // InternalOpenDictatorDsl.g:562:1: entryRuleJsonQuery returns [EObject current=null] : iv_ruleJsonQuery= ruleJsonQuery EOF ;
     public final EObject entryRuleJsonQuery() throws RecognitionException {
         EObject current = null;
 
@@ -1329,8 +1268,8 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOpenDictatorDsl.g:625:50: (iv_ruleJsonQuery= ruleJsonQuery EOF )
-            // InternalOpenDictatorDsl.g:626:2: iv_ruleJsonQuery= ruleJsonQuery EOF
+            // InternalOpenDictatorDsl.g:562:50: (iv_ruleJsonQuery= ruleJsonQuery EOF )
+            // InternalOpenDictatorDsl.g:563:2: iv_ruleJsonQuery= ruleJsonQuery EOF
             {
              newCompositeNode(grammarAccess.getJsonQueryRule()); 
             pushFollow(FOLLOW_1);
@@ -1357,74 +1296,48 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleJsonQuery"
-    // InternalOpenDictatorDsl.g:632:1: ruleJsonQuery returns [EObject current=null] : (otherlv_0= 'JsonQuery' otherlv_1= '{' otherlv_2= 'queryString' ( (lv_queryString_3_0= ruleEString ) ) otherlv_4= '}' ) ;
+    // InternalOpenDictatorDsl.g:569:1: ruleJsonQuery returns [EObject current=null] : ( (lv_queryString_0_0= ruleEString ) ) ;
     public final EObject ruleJsonQuery() throws RecognitionException {
         EObject current = null;
 
-        Token otherlv_0=null;
-        Token otherlv_1=null;
-        Token otherlv_2=null;
-        Token otherlv_4=null;
-        AntlrDatatypeRuleToken lv_queryString_3_0 = null;
+        AntlrDatatypeRuleToken lv_queryString_0_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:638:2: ( (otherlv_0= 'JsonQuery' otherlv_1= '{' otherlv_2= 'queryString' ( (lv_queryString_3_0= ruleEString ) ) otherlv_4= '}' ) )
-            // InternalOpenDictatorDsl.g:639:2: (otherlv_0= 'JsonQuery' otherlv_1= '{' otherlv_2= 'queryString' ( (lv_queryString_3_0= ruleEString ) ) otherlv_4= '}' )
+            // InternalOpenDictatorDsl.g:575:2: ( ( (lv_queryString_0_0= ruleEString ) ) )
+            // InternalOpenDictatorDsl.g:576:2: ( (lv_queryString_0_0= ruleEString ) )
             {
-            // InternalOpenDictatorDsl.g:639:2: (otherlv_0= 'JsonQuery' otherlv_1= '{' otherlv_2= 'queryString' ( (lv_queryString_3_0= ruleEString ) ) otherlv_4= '}' )
-            // InternalOpenDictatorDsl.g:640:3: otherlv_0= 'JsonQuery' otherlv_1= '{' otherlv_2= 'queryString' ( (lv_queryString_3_0= ruleEString ) ) otherlv_4= '}'
+            // InternalOpenDictatorDsl.g:576:2: ( (lv_queryString_0_0= ruleEString ) )
+            // InternalOpenDictatorDsl.g:577:3: (lv_queryString_0_0= ruleEString )
             {
-            otherlv_0=(Token)match(input,30,FOLLOW_3); 
-
-            			newLeafNode(otherlv_0, grammarAccess.getJsonQueryAccess().getJsonQueryKeyword_0());
-            		
-            otherlv_1=(Token)match(input,12,FOLLOW_27); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getJsonQueryAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,31,FOLLOW_5); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getJsonQueryAccess().getQueryStringKeyword_2());
-            		
-            // InternalOpenDictatorDsl.g:652:3: ( (lv_queryString_3_0= ruleEString ) )
-            // InternalOpenDictatorDsl.g:653:4: (lv_queryString_3_0= ruleEString )
-            {
-            // InternalOpenDictatorDsl.g:653:4: (lv_queryString_3_0= ruleEString )
-            // InternalOpenDictatorDsl.g:654:5: lv_queryString_3_0= ruleEString
+            // InternalOpenDictatorDsl.g:577:3: (lv_queryString_0_0= ruleEString )
+            // InternalOpenDictatorDsl.g:578:4: lv_queryString_0_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getJsonQueryAccess().getQueryStringEStringParserRuleCall_3_0());
-            				
-            pushFollow(FOLLOW_12);
-            lv_queryString_3_0=ruleEString();
+            				newCompositeNode(grammarAccess.getJsonQueryAccess().getQueryStringEStringParserRuleCall_0());
+            			
+            pushFollow(FOLLOW_2);
+            lv_queryString_0_0=ruleEString();
 
             state._fsp--;
 
 
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getJsonQueryRule());
-            					}
-            					set(
-            						current,
-            						"queryString",
-            						lv_queryString_3_0,
-            						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
-            					afterParserOrEnumRuleCall();
-            				
+            				if (current==null) {
+            					current = createModelElementForParent(grammarAccess.getJsonQueryRule());
+            				}
+            				set(
+            					current,
+            					"queryString",
+            					lv_queryString_0_0,
+            					"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
+            				afterParserOrEnumRuleCall();
+            			
 
             }
 
-
-            }
-
-            otherlv_4=(Token)match(input,18,FOLLOW_2); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getJsonQueryAccess().getRightCurlyBracketKeyword_4());
-            		
 
             }
 
@@ -1448,7 +1361,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleValue"
-    // InternalOpenDictatorDsl.g:679:1: entryRuleValue returns [EObject current=null] : iv_ruleValue= ruleValue EOF ;
+    // InternalOpenDictatorDsl.g:598:1: entryRuleValue returns [EObject current=null] : iv_ruleValue= ruleValue EOF ;
     public final EObject entryRuleValue() throws RecognitionException {
         EObject current = null;
 
@@ -1456,8 +1369,8 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalOpenDictatorDsl.g:679:46: (iv_ruleValue= ruleValue EOF )
-            // InternalOpenDictatorDsl.g:680:2: iv_ruleValue= ruleValue EOF
+            // InternalOpenDictatorDsl.g:598:46: (iv_ruleValue= ruleValue EOF )
+            // InternalOpenDictatorDsl.g:599:2: iv_ruleValue= ruleValue EOF
             {
              newCompositeNode(grammarAccess.getValueRule()); 
             pushFollow(FOLLOW_1);
@@ -1484,53 +1397,43 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleValue"
-    // InternalOpenDictatorDsl.g:686:1: ruleValue returns [EObject current=null] : (otherlv_0= 'Value' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleEString ) ) otherlv_4= 'value' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '}' ) ;
+    // InternalOpenDictatorDsl.g:605:1: ruleValue returns [EObject current=null] : (otherlv_0= 'type=' ( (lv_type_1_0= ruleEString ) ) otherlv_2= ',' otherlv_3= 'value=' ( (lv_value_4_0= ruleEString ) ) ) ;
     public final EObject ruleValue() throws RecognitionException {
         EObject current = null;
 
         Token otherlv_0=null;
-        Token otherlv_1=null;
         Token otherlv_2=null;
-        Token otherlv_4=null;
-        Token otherlv_6=null;
-        AntlrDatatypeRuleToken lv_type_3_0 = null;
+        Token otherlv_3=null;
+        AntlrDatatypeRuleToken lv_type_1_0 = null;
 
-        AntlrDatatypeRuleToken lv_value_5_0 = null;
+        AntlrDatatypeRuleToken lv_value_4_0 = null;
 
 
 
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:692:2: ( (otherlv_0= 'Value' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleEString ) ) otherlv_4= 'value' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '}' ) )
-            // InternalOpenDictatorDsl.g:693:2: (otherlv_0= 'Value' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleEString ) ) otherlv_4= 'value' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '}' )
+            // InternalOpenDictatorDsl.g:611:2: ( (otherlv_0= 'type=' ( (lv_type_1_0= ruleEString ) ) otherlv_2= ',' otherlv_3= 'value=' ( (lv_value_4_0= ruleEString ) ) ) )
+            // InternalOpenDictatorDsl.g:612:2: (otherlv_0= 'type=' ( (lv_type_1_0= ruleEString ) ) otherlv_2= ',' otherlv_3= 'value=' ( (lv_value_4_0= ruleEString ) ) )
             {
-            // InternalOpenDictatorDsl.g:693:2: (otherlv_0= 'Value' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleEString ) ) otherlv_4= 'value' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '}' )
-            // InternalOpenDictatorDsl.g:694:3: otherlv_0= 'Value' otherlv_1= '{' otherlv_2= 'type' ( (lv_type_3_0= ruleEString ) ) otherlv_4= 'value' ( (lv_value_5_0= ruleEString ) ) otherlv_6= '}'
+            // InternalOpenDictatorDsl.g:612:2: (otherlv_0= 'type=' ( (lv_type_1_0= ruleEString ) ) otherlv_2= ',' otherlv_3= 'value=' ( (lv_value_4_0= ruleEString ) ) )
+            // InternalOpenDictatorDsl.g:613:3: otherlv_0= 'type=' ( (lv_type_1_0= ruleEString ) ) otherlv_2= ',' otherlv_3= 'value=' ( (lv_value_4_0= ruleEString ) )
             {
-            otherlv_0=(Token)match(input,32,FOLLOW_3); 
+            otherlv_0=(Token)match(input,21,FOLLOW_3); 
 
-            			newLeafNode(otherlv_0, grammarAccess.getValueAccess().getValueKeyword_0());
+            			newLeafNode(otherlv_0, grammarAccess.getValueAccess().getTypeKeyword_0());
             		
-            otherlv_1=(Token)match(input,12,FOLLOW_28); 
-
-            			newLeafNode(otherlv_1, grammarAccess.getValueAccess().getLeftCurlyBracketKeyword_1());
-            		
-            otherlv_2=(Token)match(input,33,FOLLOW_5); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getValueAccess().getTypeKeyword_2());
-            		
-            // InternalOpenDictatorDsl.g:706:3: ( (lv_type_3_0= ruleEString ) )
-            // InternalOpenDictatorDsl.g:707:4: (lv_type_3_0= ruleEString )
+            // InternalOpenDictatorDsl.g:617:3: ( (lv_type_1_0= ruleEString ) )
+            // InternalOpenDictatorDsl.g:618:4: (lv_type_1_0= ruleEString )
             {
-            // InternalOpenDictatorDsl.g:707:4: (lv_type_3_0= ruleEString )
-            // InternalOpenDictatorDsl.g:708:5: lv_type_3_0= ruleEString
+            // InternalOpenDictatorDsl.g:618:4: (lv_type_1_0= ruleEString )
+            // InternalOpenDictatorDsl.g:619:5: lv_type_1_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getValueAccess().getTypeEStringParserRuleCall_3_0());
+            					newCompositeNode(grammarAccess.getValueAccess().getTypeEStringParserRuleCall_1_0());
             				
-            pushFollow(FOLLOW_25);
-            lv_type_3_0=ruleEString();
+            pushFollow(FOLLOW_13);
+            lv_type_1_0=ruleEString();
 
             state._fsp--;
 
@@ -1541,7 +1444,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"type",
-            						lv_type_3_0,
+            						lv_type_1_0,
             						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -1551,21 +1454,25 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_4=(Token)match(input,29,FOLLOW_5); 
+            otherlv_2=(Token)match(input,19,FOLLOW_17); 
 
-            			newLeafNode(otherlv_4, grammarAccess.getValueAccess().getValueKeyword_4());
+            			newLeafNode(otherlv_2, grammarAccess.getValueAccess().getCommaKeyword_2());
             		
-            // InternalOpenDictatorDsl.g:729:3: ( (lv_value_5_0= ruleEString ) )
-            // InternalOpenDictatorDsl.g:730:4: (lv_value_5_0= ruleEString )
+            otherlv_3=(Token)match(input,22,FOLLOW_3); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getValueAccess().getValueKeyword_3());
+            		
+            // InternalOpenDictatorDsl.g:644:3: ( (lv_value_4_0= ruleEString ) )
+            // InternalOpenDictatorDsl.g:645:4: (lv_value_4_0= ruleEString )
             {
-            // InternalOpenDictatorDsl.g:730:4: (lv_value_5_0= ruleEString )
-            // InternalOpenDictatorDsl.g:731:5: lv_value_5_0= ruleEString
+            // InternalOpenDictatorDsl.g:645:4: (lv_value_4_0= ruleEString )
+            // InternalOpenDictatorDsl.g:646:5: lv_value_4_0= ruleEString
             {
 
-            					newCompositeNode(grammarAccess.getValueAccess().getValueEStringParserRuleCall_5_0());
+            					newCompositeNode(grammarAccess.getValueAccess().getValueEStringParserRuleCall_4_0());
             				
-            pushFollow(FOLLOW_12);
-            lv_value_5_0=ruleEString();
+            pushFollow(FOLLOW_2);
+            lv_value_4_0=ruleEString();
 
             state._fsp--;
 
@@ -1576,7 +1483,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
             					set(
             						current,
             						"value",
-            						lv_value_5_0,
+            						lv_value_4_0,
             						"org.xtext.example.openDictatorDsl.OpenDictatorDsl.EString");
             					afterParserOrEnumRuleCall();
             				
@@ -1586,10 +1493,6 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,18,FOLLOW_2); 
-
-            			newLeafNode(otherlv_6, grammarAccess.getValueAccess().getRightCurlyBracketKeyword_6());
-            		
 
             }
 
@@ -1613,7 +1516,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleStatementOperator"
-    // InternalOpenDictatorDsl.g:756:1: ruleStatementOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) ;
+    // InternalOpenDictatorDsl.g:667:1: ruleStatementOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) ;
     public final Enumerator ruleStatementOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -1625,42 +1528,42 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:762:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) )
-            // InternalOpenDictatorDsl.g:763:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
+            // InternalOpenDictatorDsl.g:673:2: ( ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) ) )
+            // InternalOpenDictatorDsl.g:674:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
             {
-            // InternalOpenDictatorDsl.g:763:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
-            int alt7=3;
+            // InternalOpenDictatorDsl.g:674:2: ( (enumLiteral_0= 'AND' ) | (enumLiteral_1= 'OR' ) | (enumLiteral_2= 'NOT' ) )
+            int alt8=3;
             switch ( input.LA(1) ) {
-            case 34:
+            case 23:
                 {
-                alt7=1;
+                alt8=1;
                 }
                 break;
-            case 35:
+            case 24:
                 {
-                alt7=2;
+                alt8=2;
                 }
                 break;
-            case 36:
+            case 25:
                 {
-                alt7=3;
+                alt8=3;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 7, 0, input);
+                    new NoViableAltException("", 8, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt7) {
+            switch (alt8) {
                 case 1 :
-                    // InternalOpenDictatorDsl.g:764:3: (enumLiteral_0= 'AND' )
+                    // InternalOpenDictatorDsl.g:675:3: (enumLiteral_0= 'AND' )
                     {
-                    // InternalOpenDictatorDsl.g:764:3: (enumLiteral_0= 'AND' )
-                    // InternalOpenDictatorDsl.g:765:4: enumLiteral_0= 'AND'
+                    // InternalOpenDictatorDsl.g:675:3: (enumLiteral_0= 'AND' )
+                    // InternalOpenDictatorDsl.g:676:4: enumLiteral_0= 'AND'
                     {
-                    enumLiteral_0=(Token)match(input,34,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,23,FOLLOW_2); 
 
                     				current = grammarAccess.getStatementOperatorAccess().getANDEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getStatementOperatorAccess().getANDEnumLiteralDeclaration_0());
@@ -1672,12 +1575,12 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOpenDictatorDsl.g:772:3: (enumLiteral_1= 'OR' )
+                    // InternalOpenDictatorDsl.g:683:3: (enumLiteral_1= 'OR' )
                     {
-                    // InternalOpenDictatorDsl.g:772:3: (enumLiteral_1= 'OR' )
-                    // InternalOpenDictatorDsl.g:773:4: enumLiteral_1= 'OR'
+                    // InternalOpenDictatorDsl.g:683:3: (enumLiteral_1= 'OR' )
+                    // InternalOpenDictatorDsl.g:684:4: enumLiteral_1= 'OR'
                     {
-                    enumLiteral_1=(Token)match(input,35,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,24,FOLLOW_2); 
 
                     				current = grammarAccess.getStatementOperatorAccess().getOREnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getStatementOperatorAccess().getOREnumLiteralDeclaration_1());
@@ -1689,12 +1592,12 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOpenDictatorDsl.g:780:3: (enumLiteral_2= 'NOT' )
+                    // InternalOpenDictatorDsl.g:691:3: (enumLiteral_2= 'NOT' )
                     {
-                    // InternalOpenDictatorDsl.g:780:3: (enumLiteral_2= 'NOT' )
-                    // InternalOpenDictatorDsl.g:781:4: enumLiteral_2= 'NOT'
+                    // InternalOpenDictatorDsl.g:691:3: (enumLiteral_2= 'NOT' )
+                    // InternalOpenDictatorDsl.g:692:4: enumLiteral_2= 'NOT'
                     {
-                    enumLiteral_2=(Token)match(input,36,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,25,FOLLOW_2); 
 
                     				current = grammarAccess.getStatementOperatorAccess().getNOTEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getStatementOperatorAccess().getNOTEnumLiteralDeclaration_2());
@@ -1728,7 +1631,7 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEvaluationOperator"
-    // InternalOpenDictatorDsl.g:791:1: ruleEvaluationOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) ) ;
+    // InternalOpenDictatorDsl.g:702:1: ruleEvaluationOperator returns [Enumerator current=null] : ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) ) ;
     public final Enumerator ruleEvaluationOperator() throws RecognitionException {
         Enumerator current = null;
 
@@ -1743,57 +1646,57 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalOpenDictatorDsl.g:797:2: ( ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) ) )
-            // InternalOpenDictatorDsl.g:798:2: ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) )
+            // InternalOpenDictatorDsl.g:708:2: ( ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) ) )
+            // InternalOpenDictatorDsl.g:709:2: ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) )
             {
-            // InternalOpenDictatorDsl.g:798:2: ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) )
-            int alt8=6;
+            // InternalOpenDictatorDsl.g:709:2: ( (enumLiteral_0= 'FORSOME' ) | (enumLiteral_1= 'FORALL' ) | (enumLiteral_2= 'CONTAINS' ) | (enumLiteral_3= 'EQUALS' ) | (enumLiteral_4= 'LARGERTHAN' ) | (enumLiteral_5= 'SMALLERTHAN' ) )
+            int alt9=6;
             switch ( input.LA(1) ) {
-            case 37:
+            case 26:
                 {
-                alt8=1;
+                alt9=1;
                 }
                 break;
-            case 38:
+            case 27:
                 {
-                alt8=2;
+                alt9=2;
                 }
                 break;
-            case 39:
+            case 28:
                 {
-                alt8=3;
+                alt9=3;
                 }
                 break;
-            case 40:
+            case 29:
                 {
-                alt8=4;
+                alt9=4;
                 }
                 break;
-            case 41:
+            case 30:
                 {
-                alt8=5;
+                alt9=5;
                 }
                 break;
-            case 42:
+            case 31:
                 {
-                alt8=6;
+                alt9=6;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 8, 0, input);
+                    new NoViableAltException("", 9, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt8) {
+            switch (alt9) {
                 case 1 :
-                    // InternalOpenDictatorDsl.g:799:3: (enumLiteral_0= 'FORSOME' )
+                    // InternalOpenDictatorDsl.g:710:3: (enumLiteral_0= 'FORSOME' )
                     {
-                    // InternalOpenDictatorDsl.g:799:3: (enumLiteral_0= 'FORSOME' )
-                    // InternalOpenDictatorDsl.g:800:4: enumLiteral_0= 'FORSOME'
+                    // InternalOpenDictatorDsl.g:710:3: (enumLiteral_0= 'FORSOME' )
+                    // InternalOpenDictatorDsl.g:711:4: enumLiteral_0= 'FORSOME'
                     {
-                    enumLiteral_0=(Token)match(input,37,FOLLOW_2); 
+                    enumLiteral_0=(Token)match(input,26,FOLLOW_2); 
 
                     				current = grammarAccess.getEvaluationOperatorAccess().getFORSOMEEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_0, grammarAccess.getEvaluationOperatorAccess().getFORSOMEEnumLiteralDeclaration_0());
@@ -1805,12 +1708,12 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalOpenDictatorDsl.g:807:3: (enumLiteral_1= 'FORALL' )
+                    // InternalOpenDictatorDsl.g:718:3: (enumLiteral_1= 'FORALL' )
                     {
-                    // InternalOpenDictatorDsl.g:807:3: (enumLiteral_1= 'FORALL' )
-                    // InternalOpenDictatorDsl.g:808:4: enumLiteral_1= 'FORALL'
+                    // InternalOpenDictatorDsl.g:718:3: (enumLiteral_1= 'FORALL' )
+                    // InternalOpenDictatorDsl.g:719:4: enumLiteral_1= 'FORALL'
                     {
-                    enumLiteral_1=(Token)match(input,38,FOLLOW_2); 
+                    enumLiteral_1=(Token)match(input,27,FOLLOW_2); 
 
                     				current = grammarAccess.getEvaluationOperatorAccess().getFORALLEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_1, grammarAccess.getEvaluationOperatorAccess().getFORALLEnumLiteralDeclaration_1());
@@ -1822,12 +1725,12 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 3 :
-                    // InternalOpenDictatorDsl.g:815:3: (enumLiteral_2= 'CONTAINS' )
+                    // InternalOpenDictatorDsl.g:726:3: (enumLiteral_2= 'CONTAINS' )
                     {
-                    // InternalOpenDictatorDsl.g:815:3: (enumLiteral_2= 'CONTAINS' )
-                    // InternalOpenDictatorDsl.g:816:4: enumLiteral_2= 'CONTAINS'
+                    // InternalOpenDictatorDsl.g:726:3: (enumLiteral_2= 'CONTAINS' )
+                    // InternalOpenDictatorDsl.g:727:4: enumLiteral_2= 'CONTAINS'
                     {
-                    enumLiteral_2=(Token)match(input,39,FOLLOW_2); 
+                    enumLiteral_2=(Token)match(input,28,FOLLOW_2); 
 
                     				current = grammarAccess.getEvaluationOperatorAccess().getCONTAINSEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_2, grammarAccess.getEvaluationOperatorAccess().getCONTAINSEnumLiteralDeclaration_2());
@@ -1839,12 +1742,12 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 4 :
-                    // InternalOpenDictatorDsl.g:823:3: (enumLiteral_3= 'EQUALS' )
+                    // InternalOpenDictatorDsl.g:734:3: (enumLiteral_3= 'EQUALS' )
                     {
-                    // InternalOpenDictatorDsl.g:823:3: (enumLiteral_3= 'EQUALS' )
-                    // InternalOpenDictatorDsl.g:824:4: enumLiteral_3= 'EQUALS'
+                    // InternalOpenDictatorDsl.g:734:3: (enumLiteral_3= 'EQUALS' )
+                    // InternalOpenDictatorDsl.g:735:4: enumLiteral_3= 'EQUALS'
                     {
-                    enumLiteral_3=(Token)match(input,40,FOLLOW_2); 
+                    enumLiteral_3=(Token)match(input,29,FOLLOW_2); 
 
                     				current = grammarAccess.getEvaluationOperatorAccess().getEQUALSEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_3, grammarAccess.getEvaluationOperatorAccess().getEQUALSEnumLiteralDeclaration_3());
@@ -1856,12 +1759,12 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 5 :
-                    // InternalOpenDictatorDsl.g:831:3: (enumLiteral_4= 'LARGERTHAN' )
+                    // InternalOpenDictatorDsl.g:742:3: (enumLiteral_4= 'LARGERTHAN' )
                     {
-                    // InternalOpenDictatorDsl.g:831:3: (enumLiteral_4= 'LARGERTHAN' )
-                    // InternalOpenDictatorDsl.g:832:4: enumLiteral_4= 'LARGERTHAN'
+                    // InternalOpenDictatorDsl.g:742:3: (enumLiteral_4= 'LARGERTHAN' )
+                    // InternalOpenDictatorDsl.g:743:4: enumLiteral_4= 'LARGERTHAN'
                     {
-                    enumLiteral_4=(Token)match(input,41,FOLLOW_2); 
+                    enumLiteral_4=(Token)match(input,30,FOLLOW_2); 
 
                     				current = grammarAccess.getEvaluationOperatorAccess().getLARGERTHANEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_4, grammarAccess.getEvaluationOperatorAccess().getLARGERTHANEnumLiteralDeclaration_4());
@@ -1873,12 +1776,12 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 6 :
-                    // InternalOpenDictatorDsl.g:839:3: (enumLiteral_5= 'SMALLERTHAN' )
+                    // InternalOpenDictatorDsl.g:750:3: (enumLiteral_5= 'SMALLERTHAN' )
                     {
-                    // InternalOpenDictatorDsl.g:839:3: (enumLiteral_5= 'SMALLERTHAN' )
-                    // InternalOpenDictatorDsl.g:840:4: enumLiteral_5= 'SMALLERTHAN'
+                    // InternalOpenDictatorDsl.g:750:3: (enumLiteral_5= 'SMALLERTHAN' )
+                    // InternalOpenDictatorDsl.g:751:4: enumLiteral_5= 'SMALLERTHAN'
                     {
-                    enumLiteral_5=(Token)match(input,42,FOLLOW_2); 
+                    enumLiteral_5=(Token)match(input,31,FOLLOW_2); 
 
                     				current = grammarAccess.getEvaluationOperatorAccess().getSMALLERTHANEnumLiteralDeclaration_5().getEnumLiteral().getInstance();
                     				newLeafNode(enumLiteral_5, grammarAccess.getEvaluationOperatorAccess().getSMALLERTHANEnumLiteralDeclaration_5());
@@ -1917,31 +1820,20 @@ public class InternalOpenDictatorDslParser extends AbstractInternalAntlrParser {
 
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000001000L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000002000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000000000002000L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000004000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000008000L});
     public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000003800000L});
     public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000800000L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000001C00000000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000410000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000240000L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000040000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x00000000FF800030L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000180000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x00000000FC000000L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x000007E000000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000018000000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000100000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000080000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000200000000L});
 
 }

@@ -49,6 +49,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//StatementSet/statementOperator"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//StatementSet/statementset"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//StatementSet/statement"/>
+      <genOperations ecoreOperation="openDictator.ecore#//StatementSet/evaluate"/>
     </genClasses>
     <genClasses ecoreClass="openDictator.ecore#//InputFile">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//InputFile/fileLocation"/>

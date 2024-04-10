@@ -75,7 +75,7 @@ public class OpenDictatorDslSemanticSequencer extends AbstractDelegatingSemantic
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.INPUT_FILE__FILE_LOCATION));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getInputFileAccess().getFileLocationEStringParserRuleCall_3_0(), semanticObject.getFileLocation());
+		feeder.accept(grammarAccess.getInputFileAccess().getFileLocationEStringParserRuleCall_0(), semanticObject.getFileLocation());
 		feeder.finish();
 	}
 	
@@ -95,7 +95,7 @@ public class OpenDictatorDslSemanticSequencer extends AbstractDelegatingSemantic
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.JSON_QUERY__QUERY_STRING));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getJsonQueryAccess().getQueryStringEStringParserRuleCall_3_0(), semanticObject.getQueryString());
+		feeder.accept(grammarAccess.getJsonQueryAccess().getQueryStringEStringParserRuleCall_0(), semanticObject.getQueryString());
 		feeder.finish();
 	}
 	
@@ -106,28 +106,28 @@ public class OpenDictatorDslSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Policy returns Policy
 	 *
 	 * Constraint:
-	 *     (FailureMessage=EString SuccessMessage=EString id=EString statementset=StatementSet inputfile=InputFile)
+	 *     (id=EString FailureMessage=EString SuccessMessage=EString inputfile=InputFile statementset=StatementSet)
 	 * </pre>
 	 */
 	protected void sequence_Policy(ISerializationContext context, Policy semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, OpenDictatorPackage.Literals.POLICY__ID) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.POLICY__ID));
 			if (transientValues.isValueTransient(semanticObject, OpenDictatorPackage.Literals.POLICY__FAILURE_MESSAGE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.POLICY__FAILURE_MESSAGE));
 			if (transientValues.isValueTransient(semanticObject, OpenDictatorPackage.Literals.POLICY__SUCCESS_MESSAGE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.POLICY__SUCCESS_MESSAGE));
-			if (transientValues.isValueTransient(semanticObject, OpenDictatorPackage.Literals.POLICY__ID) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.POLICY__ID));
-			if (transientValues.isValueTransient(semanticObject, OpenDictatorPackage.Literals.POLICY__STATEMENTSET) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.POLICY__STATEMENTSET));
 			if (transientValues.isValueTransient(semanticObject, OpenDictatorPackage.Literals.POLICY__INPUTFILE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.POLICY__INPUTFILE));
+			if (transientValues.isValueTransient(semanticObject, OpenDictatorPackage.Literals.POLICY__STATEMENTSET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.POLICY__STATEMENTSET));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getPolicyAccess().getIdEStringParserRuleCall_1_0(), semanticObject.getId());
 		feeder.accept(grammarAccess.getPolicyAccess().getFailureMessageEStringParserRuleCall_3_0(), semanticObject.getFailureMessage());
 		feeder.accept(grammarAccess.getPolicyAccess().getSuccessMessageEStringParserRuleCall_5_0(), semanticObject.getSuccessMessage());
-		feeder.accept(grammarAccess.getPolicyAccess().getIdEStringParserRuleCall_7_0(), semanticObject.getId());
-		feeder.accept(grammarAccess.getPolicyAccess().getStatementsetStatementSetParserRuleCall_9_0(), semanticObject.getStatementset());
-		feeder.accept(grammarAccess.getPolicyAccess().getInputfileInputFileParserRuleCall_11_0(), semanticObject.getInputfile());
+		feeder.accept(grammarAccess.getPolicyAccess().getInputfileInputFileParserRuleCall_7_0(), semanticObject.getInputfile());
+		feeder.accept(grammarAccess.getPolicyAccess().getStatementsetStatementSetParserRuleCall_10_0(), semanticObject.getStatementset());
 		feeder.finish();
 	}
 	
@@ -138,7 +138,13 @@ public class OpenDictatorDslSemanticSequencer extends AbstractDelegatingSemantic
 	 *     StatementSet returns StatementSet
 	 *
 	 * Constraint:
-	 *     (statementOperator=StatementOperator (statementset+=StatementSet statementset+=StatementSet*)? statement+=Statement statement+=Statement*)
+	 *     (
+	 *         statementOperator=StatementOperator 
+	 *         (statementset+=StatementSet statementset+=StatementSet*)? 
+	 *         statement+=Statement 
+	 *         statement+=Statement* 
+	 *         (statementset+=StatementSet statementset+=StatementSet*)?
+	 *     )
 	 * </pre>
 	 */
 	protected void sequence_StatementSet(ISerializationContext context, StatementSet semanticObject) {
@@ -152,12 +158,7 @@ public class OpenDictatorDslSemanticSequencer extends AbstractDelegatingSemantic
 	 *     Statement returns Statement
 	 *
 	 * Constraint:
-	 *     (
-	 *         evaluationOperator=EvaluationOperator 
-	 *         (prefixEvaluationOperator+=EvaluationOperator prefixEvaluationOperator+=EvaluationOperator*)? 
-	 *         jsonquery=JsonQuery 
-	 *         value=Value
-	 *     )
+	 *     (prefixEvaluationOperator+=EvaluationOperator? jsonquery=JsonQuery evaluationOperator=EvaluationOperator value=Value)
 	 * </pre>
 	 */
 	protected void sequence_Statement(ISerializationContext context, Statement semanticObject) {
@@ -182,8 +183,8 @@ public class OpenDictatorDslSemanticSequencer extends AbstractDelegatingSemantic
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, OpenDictatorPackage.Literals.VALUE__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getValueAccess().getTypeEStringParserRuleCall_3_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getValueAccess().getValueEStringParserRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getValueAccess().getTypeEStringParserRuleCall_1_0(), semanticObject.getType());
+		feeder.accept(grammarAccess.getValueAccess().getValueEStringParserRuleCall_4_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

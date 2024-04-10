@@ -5,61 +5,41 @@ import "http://www.example.org/openDictator"
 import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 Policy returns Policy:
-	'Policy'
-	'{'
-		'FailureMessage' FailureMessage=EString
-		'SuccessMessage' SuccessMessage=EString
-		'id' id=EString
-		'statementset' statementset=StatementSet
-		'inputfile' inputfile=InputFile
-	'}';
-
-
+	
+	'Id' id=EString
+	'FailureMessage' FailureMessage=EString
+	'SuccessMessage' SuccessMessage=EString
+	'FileLocation' inputfile=InputFile
+	'Policy' '{'statementset=StatementSet'}';
 
 
 
 
 StatementSet returns StatementSet:
-	'StatementSet'
-	'{'
-		'statementOperator' statementOperator=StatementOperator
-		('statementset' '{' statementset+=StatementSet ( "," statementset+=StatementSet)* '}' )?
-		'statement' '{' statement+=Statement ( "," statement+=Statement)* '}' 
-	'}';
+	statementOperator=StatementOperator
+	'['
+		( statementset+=StatementSet ( "," statementset+=StatementSet)* ',')?
+		statement+=Statement ( "," statement+=Statement)*
+		( ',' statementset+=StatementSet ( "," statementset+=StatementSet)* )?
+	']';
 
 InputFile returns InputFile:
-	'InputFile'
-	'{'
-		'fileLocation' fileLocation=EString
-	'}';
+	fileLocation=EString;
 
 EString returns ecore::EString:
 	STRING | ID;
 
 enum StatementOperator returns StatementOperator:
-				AND = 'AND' | OR = 'OR' | NOT = 'NOT';
+	AND = 'AND' | OR = 'OR' | NOT = 'NOT';
 
 Statement returns Statement:
-	'Statement'
-	'{'
-		'evaluationOperator' evaluationOperator=EvaluationOperator
-		('prefixEvaluationOperator' '{' prefixEvaluationOperator+=EvaluationOperator ( "," prefixEvaluationOperator+=EvaluationOperator)* '}' )?
-		'jsonquery' jsonquery=JsonQuery
-		'value' value=Value
-	'}';
+	( prefixEvaluationOperator+=EvaluationOperator )? jsonquery=JsonQuery evaluationOperator=EvaluationOperator value=Value;
 
 enum EvaluationOperator returns EvaluationOperator:
-				FORSOME = 'FORSOME' | FORALL = 'FORALL' | CONTAINS = 'CONTAINS' | EQUALS = 'EQUALS' | LARGERTHAN = 'LARGERTHAN' | SMALLERTHAN = 'SMALLERTHAN';
+	FORSOME = 'FORSOME' | FORALL = 'FORALL' | CONTAINS = 'CONTAINS' | EQUALS = 'EQUALS' | LARGERTHAN = 'LARGERTHAN' | SMALLERTHAN = 'SMALLERTHAN';
 
-JsonQuery returns JsonQuery:
-	'JsonQuery'
-	'{'
-		'queryString' queryString=EString
-	'}';
+JsonQuery returns JsonQuery: 
+	queryString=EString;
 
 Value returns Value:
-	'Value'
-	'{'
-		'type' type=EString
-		'value' value=EString
-	'}';
+	'type=' type=EString ',' 'value=' value=EString;
