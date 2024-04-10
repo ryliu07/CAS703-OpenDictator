@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/OpenDictator/src-gen" creationIcons="false" editDirectory="/OpenDictator.edit/src-gen"
+    editorDirectory="/OpenDictator.editor/src-gen" modelPluginID="OpenDictator" modelName="OpenDictator"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="17.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>openDictator.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="OpenDictator" disposableProviderFactory="true" ecorePackage="openDictator.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="openDictator.ecore#//StatementOperator">
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//StatementOperator/AND"/>
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//StatementOperator/OR"/>
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//StatementOperator/NOT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="openDictator.ecore#//EvaluationOperator">
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//EvaluationOperator/FORSOME"/>
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//EvaluationOperator/FORALL"/>
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//EvaluationOperator/CONTAINS"/>
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//EvaluationOperator/EQUALS"/>
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//EvaluationOperator/LARGERTHAN"/>
+      <genEnumLiterals ecoreEnumLiteral="openDictator.ecore#//EvaluationOperator/SMALLERTHAN"/>
+    </genEnums>
+    <genClasses ecoreClass="openDictator.ecore#//Policy">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//Policy/statementset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//Policy/inputfile"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//Policy/FailureMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//Policy/SuccessMessage"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//Policy/id"/>
+      <genOperations ecoreOperation="openDictator.ecore#//Policy/evaluate"/>
+    </genClasses>
+    <genClasses ecoreClass="openDictator.ecore#//Statement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//Statement/evaluationOperator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//Statement/prefixEvaluationOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//Statement/jsonquery"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//Statement/value"/>
+      <genOperations ecoreOperation="openDictator.ecore#//Statement/evaluate"/>
+    </genClasses>
+    <genClasses ecoreClass="openDictator.ecore#//JsonQuery">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//JsonQuery/queryString"/>
+      <genOperations ecoreOperation="openDictator.ecore#//JsonQuery/evaluate"/>
+    </genClasses>
+    <genClasses ecoreClass="openDictator.ecore#//Value">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//Value/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//Value/value"/>
+    </genClasses>
+    <genClasses ecoreClass="openDictator.ecore#//StatementSet">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//StatementSet/statementOperator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//StatementSet/statementset"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference openDictator.ecore#//StatementSet/statement"/>
+    </genClasses>
+    <genClasses ecoreClass="openDictator.ecore#//InputFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute openDictator.ecore#//InputFile/fileLocation"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

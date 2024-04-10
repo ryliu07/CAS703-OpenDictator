@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="openDictator" nsURI="http://www.example.org/openDictator" nsPrefix="openDictator">
+  <eClassifiers xsi:type="ecore:EClass" name="Policy">
+    <eOperations name="evaluate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementset" lowerBound="1"
+        eType="#//StatementSet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inputfile" lowerBound="1"
+        eType="#//InputFile" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="FailureMessage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="SuccessMessage" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Statement">
+    <eOperations name="evaluate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="evaluationOperator" lowerBound="1"
+        eType="#//EvaluationOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="prefixEvaluationOperator"
+        upperBound="2" eType="#//EvaluationOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="jsonquery" lowerBound="1"
+        eType="#//JsonQuery" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="#//Value"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="JsonQuery">
+    <eOperations name="evaluate" eType="#//Value"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="queryString" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Value">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="StatementOperator">
+    <eLiterals name="AND" value="7"/>
+    <eLiterals name="OR" value="8"/>
+    <eLiterals name="NOT" value="9"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StatementSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statementOperator" lowerBound="1"
+        eType="#//StatementOperator"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementset" upperBound="-1"
+        eType="#//StatementSet" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statement" lowerBound="1"
+        upperBound="-1" eType="#//Statement" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="EvaluationOperator">
+    <eLiterals name="FORSOME"/>
+    <eLiterals name="FORALL" value="1"/>
+    <eLiterals name="CONTAINS" value="3"/>
+    <eLiterals name="EQUALS" value="4"/>
+    <eLiterals name="LARGERTHAN" value="5"/>
+    <eLiterals name="SMALLERTHAN" value="6"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="InputFile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileLocation" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

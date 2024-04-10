@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated openDictator -->
+      <package
+            uri="http://www.example.org/openDictator"
+            class="openDictator.OpenDictatorPackage"
+            genModel="model/openDictator.genmodel"/>
+   </extension>
+
+</plugin>
